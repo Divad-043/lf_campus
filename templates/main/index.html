@@ -1,0 +1,44 @@
+{% extends 'main/layouts/base.html' %}
+
+
+{% block header %}
+    {% include 'main/partials/_header.html' %}
+{% endblock header %}
+    
+
+{% block hero %}
+    <!-- Hero section start -->
+    <div class="relative">
+        <div id="hero-map" class="w-full h-[360px] md:h-[550px] xl:h-[750px] google-map"></div>
+    </div>
+    <!-- Hero section end -->
+{% endblock hero %}
+
+
+{% block search %}
+
+    {% include 'main/partials/_search_bar.html' %}
+
+{% endblock search %}
+
+
+
+{% block content %}
+
+    {% include 'main/partials/_last_item.html' %}
+    {% include 'main/partials/_about.html' %}
+
+    {% include 'main/partials/_explore.html' %}
+
+    {% include 'main/partials/_featured.html' %}
+
+    {% include 'main/partials/_last_item.html' %}
+
+    {% include 'main/partials/_team.html' %}
+
+    {% include 'main/partials/_brand.html' %}
+
+    {% include 'main/partials/_testimonial.html' %}
+
+{% endblock content %}
+    
