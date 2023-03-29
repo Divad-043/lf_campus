@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'dashboard/partials/_head.html' %}
+<body
+    x-data="main"
+    class="relative overflow-x-hidden font-nunito text-sm font-normal antialiased"
+    :class="[ $store.app.sidebar ? 'toggle-sidebar' : '', $store.app.theme, $store.app.menu, $store.app.layout,$store.app.rtlClass]"
+>
+
+{% include 'dashboard/partials/_loader.html' %}
+{% include 'dashboard/partials/_scrool_top.html' %}
+
+
+<div class="main-container min-h-screen text-black dark:text-white-dark" :class="[$store.app.navbar]">
+
+    {% include 'dashboard/partials/_sidebar.html' %}
+    <div class="main-content">
+        {% include 'dashboard/partials/_header.html' %}
+
+        <div class="animate__animated p-6" :class="[$store.app.animation]">
+            
+            {% block content %}
+                
+            {% endblock content %}
+            {% include 'dashboard/partials/_footer.html' %}
+
+        </div>
+    </div>
+</div>
+
+{% include 'dashboard/partials/_scripts.html' %}
+
+    
+</body>
+</html>
