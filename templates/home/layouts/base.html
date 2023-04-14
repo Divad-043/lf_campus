@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8" />
+    <title> 
+        {% block title %}{% endblock title %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/plugin-css/swiper-bundle.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/plugin-css/aos.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/plugin-css/swiper-bundle.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/plugin-css/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/plugin-css/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/plugin-css/simple-datatables.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/plugin-css/preloader.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/custom.css' %}" />
+</head>
+
+<body class="relative">
+    <main>
+        
+        {% block loader %}
+            <div style="z-index: 1000" class="bg-gray-900" id="preloader">
+                <div id="loader"></div>
+            </div>
+        {% endblock loader %}
+            
+        {% block content %}
+            
+        {% endblock content %}
+    </main>
+    
+    {% block scripts %}
+        <script src="{% static 'home/assets/js/others/plugins-core/aos.js' %}"></script>
+        <script src="{% static 'home/assets/js/others/plugins-script/aos.js' %}"></script>
+        <script src="{% static 'home/assets/js/others/plugins-core/swiper-bundle.js' %}"></script>
+        <script src="{% static 'home/assets/js/others/plugins-script/testimonial/testimonial.js' %}"></script>
+        <script src="{% static 'home/assets/js/others/plugins-core/alpine.min.js' %}"></script>
+        <script src="{% static 'home/assets/js/main.js' %}"></script>
+    {% endblock scripts %}
+        
+    
+</body>
+</html>

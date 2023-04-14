@@ -38,10 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'django_google_maps',
     # 'django.contrib.sites',
+    'django_extensions',
 
     'accounts',
     'core',
+    'user_messages',
+    'dashboard',
 
     # 'allauth',
     # 'allauth.account',
@@ -189,3 +193,7 @@ EMAIL_USE_SSL = False
 
 # ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.RegistrationForm'
 
+
+GRAPH_MODELS = {
+  'app_labels': ["accounts", "core", "dashboard", "messages"],
+}

@@ -1,0 +1,1154 @@
+{% extends 'home/layouts/base.html' %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+    {% include 'home/partials/_hero.html' %}
+    <div class="font-inter">
+        <!-- strat content -->
+        <!-- start::categories  -->
+        <section class="py-20 border-b border-gray-200 dark:border-foreground dark:bg-background">
+        <div class="container mx-auto lg:p-0 p-5">
+            <div class="flex lg:flex-row flex-col lg:text-left text-center flex-wrap items-center justify-between mb-12">
+            <div class="lg:mb-0 mb-4">
+                <h1 class="text-2xl lg:text-3xl font-medium capitalize mb-2 dark:text-gray-100" data-aos="fade-up" data-aos-duration="800"> Explore by categories </h1>
+                <p class="text-sm lg:text-base text-gray-500 dark:text-gray-400 font-normal" data-aos="fade-up" data-aos-duration="1000"> A selection of item's categories </p>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="800">
+                <a href="listing-list.html" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 flex items-center"> Explore More <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="w-5 h-5 ml-3" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg> </a>
+            </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+                
+                {% for category in categories %}
+                    <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                        <div class="relative group rounded-lg overflow-hidden h-[176px] w-full">
+                        <div class="group-hover:scale-105 w-full h-full transition-all" style="
+                                            background: linear-gradient(
+                                                    270deg,
+                                                    rgba(0, 0, 0, 0) 40.79%,
+                                                    rgba(0, 0, 0, 0.8) 100%
+                                                ),
+                                                url({{category.image_for_display.url}});
+                                            background-size: cover;
+                                            background-position: center;
+                                        "></div>
+                        <div class="absolute left-5 bottom-5">
+                            <h5 class="text-2xl font-medium mb-1 text-white">{{category.name}}</h5>
+                            <p class="text-base font-normal text-gray-100">{{category.item_set.count}} item</p>
+                        </div>
+                        </div>
+                    </a>
+                {% endfor %}
+                    
+
+                <!-- <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative group rounded-lg overflow-hidden h-[176px] w-full">
+                    <div class="group-hover:scale-105 w-full h-full transition-all" style="
+                                        background: linear-gradient(
+                                                270deg,
+                                                rgba(0, 0, 0, 0) 40.79%,
+                                                rgba(0, 0, 0, 0.8) 100%
+                                            ),
+                                            url(assets/img/Image/resturant/1.jpg);
+                                        background-size: cover;
+                                        background-position: center;
+                                    "></div>
+                    <div class="absolute left-5 bottom-5">
+                        <h5 class="text-2xl font-medium mb-1 text-white">Chinese</h5>
+                        <p class="text-base font-normal text-gray-100">15+ listing</p>
+                    </div>
+                    </div>
+                </a> -->
+                <!-- <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative group rounded-lg overflow-hidden h-[176px] w-full">
+                    <div class="group-hover:scale-105 w-full h-full transition-all" style="
+                                        background: linear-gradient(
+                                                270deg,
+                                                rgba(0, 0, 0, 0) 40.79%,
+                                                rgba(0, 0, 0, 0.8) 100%
+                                            ),
+                                            url(assets/img/Image/resturant/2.jpg);
+                                        background-size: cover;
+                                        background-position: center;
+                                    "></div>
+                    <div class="absolute left-5 bottom-5">
+                        <h5 class="text-2xl font-medium mb-1 text-white">Chinese</h5>
+                        <p class="text-base font-normal text-gray-100">15+ listing</p>
+                    </div>
+                    </div>
+                </a> -->
+                <!-- <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative group rounded-lg overflow-hidden h-[176px] w-full">
+                    <div class="group-hover:scale-105 w-full h-full transition-all" style="
+                                        background: linear-gradient(
+                                                270deg,
+                                                rgba(0, 0, 0, 0) 40.79%,
+                                                rgba(0, 0, 0, 0.8) 100%
+                                            ),
+                                            url(assets/img/Image/resturant/3.jpg);
+                                        background-size: cover;
+                                        background-position: center;
+                                    "></div>
+                    <div class="absolute left-5 bottom-5">
+                        <h5 class="text-2xl font-medium mb-1 text-white">Chinese</h5>
+                        <p class="text-base font-normal text-gray-100">15+ listing</p>
+                    </div>
+                    </div>
+                </a> -->
+                <!-- <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative group rounded-lg overflow-hidden h-[176px] w-full">
+                    <div class="group-hover:scale-105 w-full h-full transition-all" style="
+                                        background: linear-gradient(
+                                                270deg,
+                                                rgba(0, 0, 0, 0) 40.79%,
+                                                rgba(0, 0, 0, 0.8) 100%
+                                            ),
+                                            url(assets/img/Image/resturant/4.jpg);
+                                        background-size: cover;
+                                        background-position: center;
+                                    "></div>
+                    <div class="absolute left-5 bottom-5">
+                        <h5 class="text-2xl font-medium mb-1 text-white">Chinese</h5>
+                        <p class="text-base font-normal text-gray-100">15+ listing</p>
+                    </div>
+                    </div>
+                </a>
+                <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative group rounded-lg overflow-hidden h-[176px] w-full">
+                    <div class="group-hover:scale-105 w-full h-full transition-all" style="
+                                        background: linear-gradient(
+                                                270deg,
+                                                rgba(0, 0, 0, 0) 40.79%,
+                                                rgba(0, 0, 0, 0.8) 100%
+                                            ),
+                                            url(assets/img/Image/resturant/5.jpg);
+                                        background-size: cover;
+                                        background-position: center;
+                                    "></div>
+                    <div class="absolute left-5 bottom-5">
+                        <h5 class="text-2xl font-medium mb-1 text-white">Chinese</h5>
+                        <p class="text-base font-normal text-gray-100">15+ listing</p>
+                    </div>
+                    </div>
+                </a> -->
+                <!-- <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative group rounded-lg overflow-hidden h-[176px] w-full">
+                    <div class="group-hover:scale-105 w-full h-full transition-all" style="
+                                        background: linear-gradient(
+                                                270deg,
+                                                rgba(0, 0, 0, 0) 40.79%,
+                                                rgba(0, 0, 0, 0.8) 100%
+                                            ),
+                                            url(assets/img/Image/resturant/6.jpg);
+                                        background-size: cover;
+                                        background-position: center;
+                                    "></div>
+                    <div class="absolute left-5 bottom-5">
+                        <h5 class="text-2xl font-medium mb-1 text-white">Chinese</h5>
+                        <p class="text-base font-normal text-gray-100">15+ listing</p>
+                    </div>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+        </section>
+        <!-- end::categories  -->
+        <!-- start::resturant-listing  -->
+        <section class="py-20 border-b border-gray-200 dark:border-foreground dark:bg-background">
+        <div class="container mx-auto lg:p-0 p-5">
+            <div class="flex items-center justify-between mb-12 flex-wrap">
+            <div class="lg:mb-0 mb-4">
+                <h1 class="text-2xl lg:text-3xl font-medium capitalize mb-2 dark:text-gray-100" data-aos="fade-up" data-aos-duration="800"> Item Listing </h1>
+                <h6 class="text-sm lg:text-base text-gray-500 dark:text-gray-400 font-normal" data-aos="fade-up" data-aos-duration="1000"> A selection of recent item added </h6>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <a href="listing-list.html" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 flex items-center"> Explore More <svg xmlns="http://www.w3.org/2000/svg" class="w-5 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+                </a>
+            </div>
+            </div>
+            <!-- Slider main container -->
+            <div class="relative">
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper relative h-full">
+                <!-- Slides -->
+
+                <div class="swiper-slide overflow-hidden rounded-lg shadow-front-2 data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative overflow-hidden group">
+                      <!-- <div class="absolute z-[1px] flex flex-wrap mb-2 items-center mt-5 ml-4">
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-2 flex items-center z-[1]">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="w-3 h-3 text-green-500 mr-1" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M4.6498 2.39995H7.3498V1.64995C7.3498 1.40151 7.55043 1.19995 7.7998 1.19995C8.04918 1.19995 8.2498 1.40151 8.2498 1.64995V2.39995H8.9998C9.66168 2.39995 10.1998 2.93714 10.1998 3.59995V9.59995C10.1998 10.2618 9.66168 10.8 8.9998 10.8H2.9998C2.33699 10.8 1.7998 10.2618 1.7998 9.59995V3.59995C1.7998 2.93714 2.33699 2.39995 2.9998 2.39995H3.7498V1.64995C3.7498 1.40151 3.95043 1.19995 4.1998 1.19995C4.44918 1.19995 4.6498 1.40151 4.6498 1.64995V2.39995ZM2.6998 9.59995C2.6998 9.76495 2.83405 9.89995 2.9998 9.89995H8.9998C9.1648 9.89995 9.2998 9.76495 9.2998 9.59995V4.79995H2.6998V9.59995Z" fill="currentColor"></path>
+                          </svg> <span class="text-xs font-medium">Instant Booking</span>
+                        </div>
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-2 flex items-center z-[1]">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 text-green-500 mr-1">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                          </svg> <span class="text-xs font-medium">Featured</span>
+                        </div>
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-2 flex items-center z-[1]">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="w-3 h-3 mr-1 text-blue-500" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M7.19995 2.99995H4.79995L3.9112 1.66645C3.77808 1.46695 3.92058 1.19995 4.16058 1.19995H7.83933C8.07933 1.19995 8.22183 1.46695 8.0887 1.66645L7.19995 2.99995ZM4.79995 3.59995H7.19995C7.2712 3.64683 7.35183 3.69933 7.42683 3.75745C8.50683 4.43808 10.8 5.90433 10.8 8.99995C10.8 9.9937 9.9937 10.8 8.99995 10.8H2.99995C2.00583 10.8 1.19995 9.9937 1.19995 8.99995C1.19995 5.90433 3.49308 4.43808 4.5562 3.75745C4.64808 3.69933 4.7287 3.64683 4.79995 3.59995ZM6.37683 5.39995C6.37683 5.19183 6.20808 5.02308 5.98308 5.02308C5.79183 5.02308 5.62308 5.19183 5.62308 5.39995V5.51245C5.51808 5.53495 5.40183 5.56683 5.32495 5.60808C5.04558 5.73558 4.80183 5.97183 4.74183 6.31495C4.70808 6.5062 4.72683 6.69183 4.80558 6.8587C4.88433 7.0237 5.0062 7.13995 5.12995 7.22433C5.34745 7.37245 5.63433 7.4587 5.8537 7.52433L5.89495 7.53558C6.15745 7.6162 6.3337 7.67433 6.44433 7.75495C6.4912 7.7887 6.50808 7.81495 6.5137 7.83183C6.5212 7.84683 6.53245 7.88058 6.51933 7.95558C6.50808 8.0212 6.47245 8.07745 6.36933 8.12058C6.25495 8.16933 6.06933 8.1937 5.82933 8.1562C5.71683 8.13745 5.5162 8.06995 5.33808 8.00995C5.29683 7.99495 5.25558 7.98183 5.21808 7.9687C5.0212 7.90308 4.80933 8.00995 4.7437 8.20683C4.67808 8.4037 4.78495 8.61558 4.98183 8.66433C5.00433 8.6887 5.03245 8.69808 5.06433 8.70933C5.19558 8.75995 5.44495 8.8387 5.62308 8.87995V8.99995C5.62308 9.20808 5.79183 9.37683 5.98308 9.37683C6.20808 9.37683 6.37683 9.20808 6.37683 8.99995V8.89683C6.4762 8.87808 6.5737 8.83308 6.6637 8.81058C6.95995 8.68495 7.1962 8.4412 7.25808 8.08495C7.29183 7.88995 7.27683 7.70245 7.20183 7.53183C7.1287 7.36308 7.01058 7.23933 6.88495 7.14933C6.65808 6.98245 6.35433 6.89245 6.12745 6.82308L6.09558 6.81933C5.8462 6.7387 5.6662 6.68245 5.55183 6.6037C5.50308 6.56995 5.48808 6.54745 5.48433 6.53808C5.48058 6.53058 5.46933 6.50808 5.48058 6.44433C5.48808 6.40683 5.5162 6.34495 5.63433 6.29245C5.73933 6.23808 5.94183 6.20808 6.17058 6.22683C6.25308 6.25683 6.5062 6.30558 6.57933 6.32433C6.77808 6.3787 6.98433 6.2587 7.03683 6.05808C7.0912 5.85933 6.9712 5.65308 6.77058 5.60058C6.68808 5.57808 6.50058 5.54058 6.37683 5.51808V5.39995Z" fill="currentColor"></path>
+                          </svg> <span class="text-xs font-medium">21,264.24</span>
+                        </div>
+                      </div> -->
+                      <img class="w-full h-80 object-cover group-hover:scale-105 transition-all" src="/static/home/assets/img/lost.png" alt="">
+                      <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 pt-2 card-linear-gradient w-full">
+                        <span class="bg-warning-600 text-xs text-white rounded-full px-3 py-1 mb-3 inline-flex"> Apartment </span>
+                        <div class="flex text-white items-center mb-2">
+                          <h2 class="text-xl capitalize font-semibold mr-2"> Premium Duplex Apartment </h2>
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="w-5 h-5" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M15.6562 4.34313C16.4688 5.15625 16.6906 6.31875 16.4031 7.34688C17.3531 7.85 18 8.85 18 10C18 11.15 17.3531 12.15 16.4031 12.6531C16.7188 13.6812 16.4688 14.8156 15.6562 15.6562C14.8156 16.4688 13.6812 16.6906 12.6531 16.4031C12.15 17.3531 11.15 18 10 18C8.85 18 7.85 17.3531 7.34688 16.4031C6.31875 16.7188 5.15625 16.4688 4.34313 15.6562C3.53 14.8156 3.28125 13.6812 3.59687 12.6531C2.64687 12.15 2 11.15 2 10C2 8.85 2.64687 7.85 3.59687 7.34688C3.25312 6.31875 3.53 5.15625 4.34313 4.34313C5.15625 3.53 6.31875 3.28125 7.34688 3.59687C7.85 2.64687 8.85 2 10 2C11.15 2 12.15 2.64687 12.6531 3.59687C13.6812 3.25312 14.8156 3.53 15.6562 4.34313Z" fill="#00AB55"></path>
+                            <path d="M7 10L8.64645 11.6464C8.84171 11.8417 9.15829 11.8417 9.35355 11.6464L13 8" stroke="white" stroke-width="1.2" stroke-linecap="round"></path>
+                          </svg>
+                        </div>
+                        <p class="text-sm font-normal text-white mb-4"> Manhattan, USA </p>
+                      </div>
+                    </div>
+                    <div class="p-3 bg-gray-100 dark:bg-foreground rounded-b-lg">
+                      <!-- <h5 class="text-lg text-gray-700 dark:text-gray-100 font-semibold mb-8"> Booking Summary </h5> -->
+                      <div class="flex justify-between items-center flex-wrap mb-5">
+                        <p class="text-gray-500 dark:text-gray-400 text-base mr-4"> Date Of Booking </p>
+                        <h6 class="text-gray-700 dark:text-gray-200 font-medium text-base"> 21 Mar, 2022 </h6>
+                      </div>
+                      <div class="flex justify-between items-center mb-5 flex-wrap">
+                        <p class="text-gray-500 dark:text-gray-400 text-base mr-4"> Booking Time </p>
+                        <h6 class="text-gray-700 dark:text-gray-200 font-medium text-base"> 06.30 - 08.00 PM </h6>
+                      </div>
+                      <div class="flex justify-between items-center mb-5 flex-wrap">
+                        <p class="text-gray-500 dark:text-gray-400 text-base mr-4"> People </p>
+                        <h6 class="text-gray-700 dark:text-gray-200 font-medium text-base"> 04 Adults </h6>
+                      </div>
+                      <!-- <div class="border-b border-gray-200 dark:border-background mb-4"></div> -->
+                      <!-- <div class="flex justify-between items-center mb-5 flex-wrap">
+                        <p class="text-gray-700 dark:text-gray-100 text-base mr-4"> Total Cost </p>
+                        <h6 class="text-blue-500 dark:text-gray-200 font-medium text-base"> $ 350.25 </h6>
+                      </div> -->
+                    </div>
+                  </div>
+
+                <div class="swiper-slide overflow-hidden rounded-lg shadow-front-2 data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative overflow-hidden group">
+                      <!-- <div class="absolute z-[1px] flex flex-wrap mb-2 items-center mt-5 ml-4">
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-2 flex items-center z-[1]">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="w-3 h-3 text-green-500 mr-1" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M4.6498 2.39995H7.3498V1.64995C7.3498 1.40151 7.55043 1.19995 7.7998 1.19995C8.04918 1.19995 8.2498 1.40151 8.2498 1.64995V2.39995H8.9998C9.66168 2.39995 10.1998 2.93714 10.1998 3.59995V9.59995C10.1998 10.2618 9.66168 10.8 8.9998 10.8H2.9998C2.33699 10.8 1.7998 10.2618 1.7998 9.59995V3.59995C1.7998 2.93714 2.33699 2.39995 2.9998 2.39995H3.7498V1.64995C3.7498 1.40151 3.95043 1.19995 4.1998 1.19995C4.44918 1.19995 4.6498 1.40151 4.6498 1.64995V2.39995ZM2.6998 9.59995C2.6998 9.76495 2.83405 9.89995 2.9998 9.89995H8.9998C9.1648 9.89995 9.2998 9.76495 9.2998 9.59995V4.79995H2.6998V9.59995Z" fill="currentColor"></path>
+                          </svg> <span class="text-xs font-medium">Instant Booking</span>
+                        </div>
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-2 flex items-center z-[1]">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 text-green-500 mr-1">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                          </svg> <span class="text-xs font-medium">Featured</span>
+                        </div>
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-2 flex items-center z-[1]">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="w-3 h-3 mr-1 text-blue-500" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M7.19995 2.99995H4.79995L3.9112 1.66645C3.77808 1.46695 3.92058 1.19995 4.16058 1.19995H7.83933C8.07933 1.19995 8.22183 1.46695 8.0887 1.66645L7.19995 2.99995ZM4.79995 3.59995H7.19995C7.2712 3.64683 7.35183 3.69933 7.42683 3.75745C8.50683 4.43808 10.8 5.90433 10.8 8.99995C10.8 9.9937 9.9937 10.8 8.99995 10.8H2.99995C2.00583 10.8 1.19995 9.9937 1.19995 8.99995C1.19995 5.90433 3.49308 4.43808 4.5562 3.75745C4.64808 3.69933 4.7287 3.64683 4.79995 3.59995ZM6.37683 5.39995C6.37683 5.19183 6.20808 5.02308 5.98308 5.02308C5.79183 5.02308 5.62308 5.19183 5.62308 5.39995V5.51245C5.51808 5.53495 5.40183 5.56683 5.32495 5.60808C5.04558 5.73558 4.80183 5.97183 4.74183 6.31495C4.70808 6.5062 4.72683 6.69183 4.80558 6.8587C4.88433 7.0237 5.0062 7.13995 5.12995 7.22433C5.34745 7.37245 5.63433 7.4587 5.8537 7.52433L5.89495 7.53558C6.15745 7.6162 6.3337 7.67433 6.44433 7.75495C6.4912 7.7887 6.50808 7.81495 6.5137 7.83183C6.5212 7.84683 6.53245 7.88058 6.51933 7.95558C6.50808 8.0212 6.47245 8.07745 6.36933 8.12058C6.25495 8.16933 6.06933 8.1937 5.82933 8.1562C5.71683 8.13745 5.5162 8.06995 5.33808 8.00995C5.29683 7.99495 5.25558 7.98183 5.21808 7.9687C5.0212 7.90308 4.80933 8.00995 4.7437 8.20683C4.67808 8.4037 4.78495 8.61558 4.98183 8.66433C5.00433 8.6887 5.03245 8.69808 5.06433 8.70933C5.19558 8.75995 5.44495 8.8387 5.62308 8.87995V8.99995C5.62308 9.20808 5.79183 9.37683 5.98308 9.37683C6.20808 9.37683 6.37683 9.20808 6.37683 8.99995V8.89683C6.4762 8.87808 6.5737 8.83308 6.6637 8.81058C6.95995 8.68495 7.1962 8.4412 7.25808 8.08495C7.29183 7.88995 7.27683 7.70245 7.20183 7.53183C7.1287 7.36308 7.01058 7.23933 6.88495 7.14933C6.65808 6.98245 6.35433 6.89245 6.12745 6.82308L6.09558 6.81933C5.8462 6.7387 5.6662 6.68245 5.55183 6.6037C5.50308 6.56995 5.48808 6.54745 5.48433 6.53808C5.48058 6.53058 5.46933 6.50808 5.48058 6.44433C5.48808 6.40683 5.5162 6.34495 5.63433 6.29245C5.73933 6.23808 5.94183 6.20808 6.17058 6.22683C6.25308 6.25683 6.5062 6.30558 6.57933 6.32433C6.77808 6.3787 6.98433 6.2587 7.03683 6.05808C7.0912 5.85933 6.9712 5.65308 6.77058 5.60058C6.68808 5.57808 6.50058 5.54058 6.37683 5.51808V5.39995Z" fill="currentColor"></path>
+                          </svg> <span class="text-xs font-medium">21,264.24</span>
+                        </div>
+                      </div> -->
+                      <img class="w-full h-80 object-cover group-hover:scale-105 transition-all" src="/static/home/assets/img/lost.png" alt="">
+                      <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 pt-2 card-linear-gradient w-full">
+                        <span class="bg-warning-600 text-xs text-white rounded-full px-3 py-1 mb-3 inline-flex"> Apartment </span>
+                        <div class="flex text-white items-center mb-2">
+                          <h2 class="text-xl capitalize font-semibold mr-2"> Premium Duplex Apartment </h2>
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="w-5 h-5" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M15.6562 4.34313C16.4688 5.15625 16.6906 6.31875 16.4031 7.34688C17.3531 7.85 18 8.85 18 10C18 11.15 17.3531 12.15 16.4031 12.6531C16.7188 13.6812 16.4688 14.8156 15.6562 15.6562C14.8156 16.4688 13.6812 16.6906 12.6531 16.4031C12.15 17.3531 11.15 18 10 18C8.85 18 7.85 17.3531 7.34688 16.4031C6.31875 16.7188 5.15625 16.4688 4.34313 15.6562C3.53 14.8156 3.28125 13.6812 3.59687 12.6531C2.64687 12.15 2 11.15 2 10C2 8.85 2.64687 7.85 3.59687 7.34688C3.25312 6.31875 3.53 5.15625 4.34313 4.34313C5.15625 3.53 6.31875 3.28125 7.34688 3.59687C7.85 2.64687 8.85 2 10 2C11.15 2 12.15 2.64687 12.6531 3.59687C13.6812 3.25312 14.8156 3.53 15.6562 4.34313Z" fill="#00AB55"></path>
+                            <path d="M7 10L8.64645 11.6464C8.84171 11.8417 9.15829 11.8417 9.35355 11.6464L13 8" stroke="white" stroke-width="1.2" stroke-linecap="round"></path>
+                          </svg>
+                        </div>
+                        <p class="text-sm font-normal text-white mb-4"> Manhattan, USA </p>
+                      </div>
+                    </div>
+                    <div class="p-3 bg-gray-100 dark:bg-foreground rounded-b-lg">
+                      <!-- <h5 class="text-lg text-gray-700 dark:text-gray-100 font-semibold mb-8"> Booking Summary </h5> -->
+                      <div class="flex justify-between items-center flex-wrap mb-5">
+                        <p class="text-gray-500 dark:text-gray-400 text-base mr-4"> Date Of Booking </p>
+                        <h6 class="text-gray-700 dark:text-gray-200 font-medium text-base"> 21 Mar, 2022 </h6>
+                      </div>
+                      <div class="flex justify-between items-center mb-5 flex-wrap">
+                        <p class="text-gray-500 dark:text-gray-400 text-base mr-4"> Booking Time </p>
+                        <h6 class="text-gray-700 dark:text-gray-200 font-medium text-base"> 06.30 - 08.00 PM </h6>
+                      </div>
+                      <div class="flex justify-between items-center mb-5 flex-wrap">
+                        <p class="text-gray-500 dark:text-gray-400 text-base mr-4"> People </p>
+                        <h6 class="text-gray-700 dark:text-gray-200 font-medium text-base"> 04 Adults </h6>
+                      </div>
+                      <!-- <div class="border-b border-gray-200 dark:border-background mb-4"></div> -->
+                      <!-- <div class="flex justify-between items-center mb-5 flex-wrap">
+                        <p class="text-gray-700 dark:text-gray-100 text-base mr-4"> Total Cost </p>
+                        <h6 class="text-blue-500 dark:text-gray-200 font-medium text-base"> $ 350.25 </h6>
+                      </div> -->
+                    </div>
+                  </div>
+
+
+                  <div class="swiper-slide overflow-hidden rounded-lg shadow-front-2 data-aos="fade-up" data-aos-duration="800">
+                    <a href="{% url 'core:item_detail' 1 %}" class="relative overflow-hidden group">
+                        <div class="relative overflow-hidden group">
+                            <!-- <div class="absolute z-[1px] flex flex-wrap mb-2 items-center mt-5 ml-4">
+                              <div class="bg-white rounded-full mb-2 px-3 py-1 mr-2 flex items-center z-[1]">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="w-3 h-3 text-green-500 mr-1" xmlns="../www.w3.org/2000/svg.html">
+                                  <path d="M4.6498 2.39995H7.3498V1.64995C7.3498 1.40151 7.55043 1.19995 7.7998 1.19995C8.04918 1.19995 8.2498 1.40151 8.2498 1.64995V2.39995H8.9998C9.66168 2.39995 10.1998 2.93714 10.1998 3.59995V9.59995C10.1998 10.2618 9.66168 10.8 8.9998 10.8H2.9998C2.33699 10.8 1.7998 10.2618 1.7998 9.59995V3.59995C1.7998 2.93714 2.33699 2.39995 2.9998 2.39995H3.7498V1.64995C3.7498 1.40151 3.95043 1.19995 4.1998 1.19995C4.44918 1.19995 4.6498 1.40151 4.6498 1.64995V2.39995ZM2.6998 9.59995C2.6998 9.76495 2.83405 9.89995 2.9998 9.89995H8.9998C9.1648 9.89995 9.2998 9.76495 9.2998 9.59995V4.79995H2.6998V9.59995Z" fill="currentColor"></path>
+                                </svg> <span class="text-xs font-medium">Instant Booking</span>
+                              </div>
+                              <div class="bg-white rounded-full mb-2 px-3 py-1 mr-2 flex items-center z-[1]">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 text-green-500 mr-1">
+                                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg> <span class="text-xs font-medium">Featured</span>
+                              </div>
+                              <div class="bg-white rounded-full mb-2 px-3 py-1 mr-2 flex items-center z-[1]">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="w-3 h-3 mr-1 text-blue-500" xmlns="../www.w3.org/2000/svg.html">
+                                  <path d="M7.19995 2.99995H4.79995L3.9112 1.66645C3.77808 1.46695 3.92058 1.19995 4.16058 1.19995H7.83933C8.07933 1.19995 8.22183 1.46695 8.0887 1.66645L7.19995 2.99995ZM4.79995 3.59995H7.19995C7.2712 3.64683 7.35183 3.69933 7.42683 3.75745C8.50683 4.43808 10.8 5.90433 10.8 8.99995C10.8 9.9937 9.9937 10.8 8.99995 10.8H2.99995C2.00583 10.8 1.19995 9.9937 1.19995 8.99995C1.19995 5.90433 3.49308 4.43808 4.5562 3.75745C4.64808 3.69933 4.7287 3.64683 4.79995 3.59995ZM6.37683 5.39995C6.37683 5.19183 6.20808 5.02308 5.98308 5.02308C5.79183 5.02308 5.62308 5.19183 5.62308 5.39995V5.51245C5.51808 5.53495 5.40183 5.56683 5.32495 5.60808C5.04558 5.73558 4.80183 5.97183 4.74183 6.31495C4.70808 6.5062 4.72683 6.69183 4.80558 6.8587C4.88433 7.0237 5.0062 7.13995 5.12995 7.22433C5.34745 7.37245 5.63433 7.4587 5.8537 7.52433L5.89495 7.53558C6.15745 7.6162 6.3337 7.67433 6.44433 7.75495C6.4912 7.7887 6.50808 7.81495 6.5137 7.83183C6.5212 7.84683 6.53245 7.88058 6.51933 7.95558C6.50808 8.0212 6.47245 8.07745 6.36933 8.12058C6.25495 8.16933 6.06933 8.1937 5.82933 8.1562C5.71683 8.13745 5.5162 8.06995 5.33808 8.00995C5.29683 7.99495 5.25558 7.98183 5.21808 7.9687C5.0212 7.90308 4.80933 8.00995 4.7437 8.20683C4.67808 8.4037 4.78495 8.61558 4.98183 8.66433C5.00433 8.6887 5.03245 8.69808 5.06433 8.70933C5.19558 8.75995 5.44495 8.8387 5.62308 8.87995V8.99995C5.62308 9.20808 5.79183 9.37683 5.98308 9.37683C6.20808 9.37683 6.37683 9.20808 6.37683 8.99995V8.89683C6.4762 8.87808 6.5737 8.83308 6.6637 8.81058C6.95995 8.68495 7.1962 8.4412 7.25808 8.08495C7.29183 7.88995 7.27683 7.70245 7.20183 7.53183C7.1287 7.36308 7.01058 7.23933 6.88495 7.14933C6.65808 6.98245 6.35433 6.89245 6.12745 6.82308L6.09558 6.81933C5.8462 6.7387 5.6662 6.68245 5.55183 6.6037C5.50308 6.56995 5.48808 6.54745 5.48433 6.53808C5.48058 6.53058 5.46933 6.50808 5.48058 6.44433C5.48808 6.40683 5.5162 6.34495 5.63433 6.29245C5.73933 6.23808 5.94183 6.20808 6.17058 6.22683C6.25308 6.25683 6.5062 6.30558 6.57933 6.32433C6.77808 6.3787 6.98433 6.2587 7.03683 6.05808C7.0912 5.85933 6.9712 5.65308 6.77058 5.60058C6.68808 5.57808 6.50058 5.54058 6.37683 5.51808V5.39995Z" fill="currentColor"></path>
+                                </svg> <span class="text-xs font-medium">21,264.24</span>
+                              </div>
+                            </div> -->
+                            <img class="w-full h-80 object-cover group-hover:scale-105 transition-all" src="/static/home/assets/img/lost.png" alt="">
+                            <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 pt-2 card-linear-gradient w-full">
+                              <span class="bg-warning-600 text-xs text-white rounded-full px-3 py-1 mb-3 inline-flex"> Apartment </span>
+                              <div class="flex text-white items-center mb-2">
+                                <h2 class="text-xl capitalize font-semibold mr-2"> Premium Duplex Apartment </h2>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="w-5 h-5" xmlns="../www.w3.org/2000/svg.html">
+                                  <path d="M15.6562 4.34313C16.4688 5.15625 16.6906 6.31875 16.4031 7.34688C17.3531 7.85 18 8.85 18 10C18 11.15 17.3531 12.15 16.4031 12.6531C16.7188 13.6812 16.4688 14.8156 15.6562 15.6562C14.8156 16.4688 13.6812 16.6906 12.6531 16.4031C12.15 17.3531 11.15 18 10 18C8.85 18 7.85 17.3531 7.34688 16.4031C6.31875 16.7188 5.15625 16.4688 4.34313 15.6562C3.53 14.8156 3.28125 13.6812 3.59687 12.6531C2.64687 12.15 2 11.15 2 10C2 8.85 2.64687 7.85 3.59687 7.34688C3.25312 6.31875 3.53 5.15625 4.34313 4.34313C5.15625 3.53 6.31875 3.28125 7.34688 3.59687C7.85 2.64687 8.85 2 10 2C11.15 2 12.15 2.64687 12.6531 3.59687C13.6812 3.25312 14.8156 3.53 15.6562 4.34313Z" fill="#00AB55"></path>
+                                  <path d="M7 10L8.64645 11.6464C8.84171 11.8417 9.15829 11.8417 9.35355 11.6464L13 8" stroke="white" stroke-width="1.2" stroke-linecap="round"></path>
+                                </svg>
+                              </div>
+                              <p class="text-sm font-normal text-white mb-4"> Manhattan, USA </p>
+                            </div>
+                          </div>
+                    </a>
+                    <div class="p-3 bg-gray-100 dark:bg-foreground rounded-b-lg">
+                      <!-- <h5 class="text-lg text-gray-700 dark:text-gray-100 font-semibold mb-8"> Booking Summary </h5> -->
+                      <div class="flex justify-between items-center flex-wrap mb-5">
+                        <p class="text-gray-500 dark:text-gray-400 text-base mr-4"> Date Of Booking </p>
+                        <h6 class="text-gray-700 dark:text-gray-200 font-medium text-base"> 21 Mar, 2022 </h6>
+                      </div>
+                      <div class="flex justify-between items-center mb-5 flex-wrap">
+                        <p class="text-gray-500 dark:text-gray-400 text-base mr-4"> Booking Time </p>
+                        <h6 class="text-gray-700 dark:text-gray-200 font-medium text-base"> 06.30 - 08.00 PM </h6>
+                      </div>
+                      <div class="flex justify-between items-center mb-5 flex-wrap">
+                        <p class="text-gray-500 dark:text-gray-400 text-base mr-4"> People </p>
+                        <h6 class="text-gray-700 dark:text-gray-200 font-medium text-base"> 04 Adults </h6>
+                      </div>
+                      <!-- <div class="border-b border-gray-200 dark:border-background mb-4"></div> -->
+                      <!-- <div class="flex justify-between items-center mb-5 flex-wrap">
+                        <p class="text-gray-700 dark:text-gray-100 text-base mr-4"> Total Cost </p>
+                        <h6 class="text-blue-500 dark:text-gray-200 font-medium text-base"> $ 350.25 </h6>
+                      </div> -->
+                    </div>
+                  </div>
+
+                <!-- <div class="swiper-slide overflow-hidden rounded-lg" data-aos="fade-up" data-aos-duration="800">
+                    <a href="event-listing-details-page.html" class="relative overflow-hidden group">
+                    <div class="absolute flex items-center mt-5 ml-4 mr-1">
+                        <div class="bg-white relative z-10 rounded-full px-3 py-1 flex items-center">
+                        <svg class="w-3 mr-1 h-auto text-green-500" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M4.6498 2.39995H7.3498V1.64995C7.3498 1.40151 7.55043 1.19995 7.7998 1.19995C8.04918 1.19995 8.2498 1.40151 8.2498 1.64995V2.39995H8.9998C9.66168 2.39995 10.1998 2.93714 10.1998 3.59995V9.59995C10.1998 10.2618 9.66168 10.8 8.9998 10.8H2.9998C2.33699 10.8 1.7998 10.2618 1.7998 9.59995V3.59995C1.7998 2.93714 2.33699 2.39995 2.9998 2.39995H3.7498V1.64995C3.7498 1.40151 3.95043 1.19995 4.1998 1.19995C4.44918 1.19995 4.6498 1.40151 4.6498 1.64995V2.39995ZM2.6998 9.59995C2.6998 9.76495 2.83405 9.89995 2.9998 9.89995H8.9998C9.1648 9.89995 9.2998 9.76495 9.2998 9.59995V4.79995H2.6998V9.59995Z" fill="currentColor" />
+                        </svg>
+                        <span class="text-xs font-medium">Instant Booking </span>
+                        </div>
+                    </div>
+                    <img class="w-full h-80 object-cover rounded-t-lg group-hover:scale-105 transition-all" src="assets/img/Image/resturant/7.jpg" alt="" />
+                    <div class="absolute bottom-0 overflow-hidden top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 pt-2 card-linear-gradient w-full">
+                        <span class="bg-pink-600 text-xs text-white rounded-full px-3 py-1 mb-3 inline-flex">Chinese</span>
+                        <div class="flex text-white items-center mb-2">
+                        <h2 class="text-xl capitalize font-semibold"> Yangzhou Fried Rice </h2>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M15.6562 4.34313C16.4688 5.15625 16.6906 6.31875 16.4031 7.34688C17.3531 7.85 18 8.85 18 10C18 11.15 17.3531 12.15 16.4031 12.6531C16.7188 13.6812 16.4688 14.8156 15.6562 15.6562C14.8156 16.4688 13.6812 16.6906 12.6531 16.4031C12.15 17.3531 11.15 18 10 18C8.85 18 7.85 17.3531 7.34688 16.4031C6.31875 16.7188 5.15625 16.4688 4.34313 15.6562C3.53 14.8156 3.28125 13.6812 3.59687 12.6531C2.64687 12.15 2 11.15 2 10C2 8.85 2.64687 7.85 3.59687 7.34688C3.25312 6.31875 3.53 5.15625 4.34313 4.34313C5.15625 3.53 6.31875 3.28125 7.34688 3.59687C7.85 2.64687 8.85 2 10 2C11.15 2 12.15 2.64687 12.6531 3.59687C13.6812 3.25312 14.8156 3.53 15.6562 4.34313Z" fill="#00AB55" />
+                            <path d="M7 10L8.64645 11.6464C8.84171 11.8417 9.15829 11.8417 9.35355 11.6464L13 8" stroke="white" stroke-width="1.2" stroke-linecap="round" />
+                        </svg>
+                        </div>
+                        <p class="text-sm font-normal text-white mb-4"> New York, USA </p>
+                    </div>
+                    </a>
+                    <div class="flex justify-between relative z-10 p-6 bg-gray-100 dark:bg-foreground rounded-b-lg">
+                    <div class="flex">
+                        <div class="flex">
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        </div>
+                        <span class="text-base mx-2 dark:text-gray-100">4.5</span>
+                        <span class="text-gray-500 dark:text-gray-400">(56)</span>
+                    </div>
+                    <button type="button" class="text-gray-300 hover:text-pink-600 dark:text-gray-500 dark:hover:text-pink-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    </div>
+                </div> -->
+                <!-- <div class="swiper-slide overflow-hidden rounded-lg" data-aos="fade-up" data-aos-duration="800">
+                    <a href="event-listing-details-page.html" class="relative overflow-hidden group">
+                    <div class="absolute z-10 flex flex-wrap mb-2 items-center mt-5 ml-4 mr-1">
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-1 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-auto text-yellow-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <span class="text-xs font-medium">Featured</span>
+                        </div>
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-1 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-auto text-green-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-xs font-medium">Featured</span>
+                        </div>
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-1 flex items-center">
+                        <svg class="w-3 h-auto text-blue-500 mr-1" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M7.19995 2.99995H4.79995L3.9112 1.66645C3.77808 1.46695 3.92058 1.19995 4.16058 1.19995H7.83933C8.07933 1.19995 8.22183 1.46695 8.0887 1.66645L7.19995 2.99995ZM4.79995 3.59995H7.19995C7.2712 3.64683 7.35183 3.69933 7.42683 3.75745C8.50683 4.43808 10.8 5.90433 10.8 8.99995C10.8 9.9937 9.9937 10.8 8.99995 10.8H2.99995C2.00583 10.8 1.19995 9.9937 1.19995 8.99995C1.19995 5.90433 3.49308 4.43808 4.5562 3.75745C4.64808 3.69933 4.7287 3.64683 4.79995 3.59995ZM6.37683 5.39995C6.37683 5.19183 6.20808 5.02308 5.98308 5.02308C5.79183 5.02308 5.62308 5.19183 5.62308 5.39995V5.51245C5.51808 5.53495 5.40183 5.56683 5.32495 5.60808C5.04558 5.73558 4.80183 5.97183 4.74183 6.31495C4.70808 6.5062 4.72683 6.69183 4.80558 6.8587C4.88433 7.0237 5.0062 7.13995 5.12995 7.22433C5.34745 7.37245 5.63433 7.4587 5.8537 7.52433L5.89495 7.53558C6.15745 7.6162 6.3337 7.67433 6.44433 7.75495C6.4912 7.7887 6.50808 7.81495 6.5137 7.83183C6.5212 7.84683 6.53245 7.88058 6.51933 7.95558C6.50808 8.0212 6.47245 8.07745 6.36933 8.12058C6.25495 8.16933 6.06933 8.1937 5.82933 8.1562C5.71683 8.13745 5.5162 8.06995 5.33808 8.00995C5.29683 7.99495 5.25558 7.98183 5.21808 7.9687C5.0212 7.90308 4.80933 8.00995 4.7437 8.20683C4.67808 8.4037 4.78495 8.61558 4.98183 8.66433C5.00433 8.6887 5.03245 8.69808 5.06433 8.70933C5.19558 8.75995 5.44495 8.8387 5.62308 8.87995V8.99995C5.62308 9.20808 5.79183 9.37683 5.98308 9.37683C6.20808 9.37683 6.37683 9.20808 6.37683 8.99995V8.89683C6.4762 8.87808 6.5737 8.83308 6.6637 8.81058C6.95995 8.68495 7.1962 8.4412 7.25808 8.08495C7.29183 7.88995 7.27683 7.70245 7.20183 7.53183C7.1287 7.36308 7.01058 7.23933 6.88495 7.14933C6.65808 6.98245 6.35433 6.89245 6.12745 6.82308L6.09558 6.81933C5.8462 6.7387 5.6662 6.68245 5.55183 6.6037C5.50308 6.56995 5.48808 6.54745 5.48433 6.53808C5.48058 6.53058 5.46933 6.50808 5.48058 6.44433C5.48808 6.40683 5.5162 6.34495 5.63433 6.29245C5.73933 6.23808 5.94183 6.20808 6.17058 6.22683C6.25308 6.25683 6.5062 6.30558 6.57933 6.32433C6.77808 6.3787 6.98433 6.2587 7.03683 6.05808C7.0912 5.85933 6.9712 5.65308 6.77058 5.60058C6.68808 5.57808 6.50058 5.54058 6.37683 5.51808V5.39995Z" fill="currentColor" />
+                        </svg>
+                        <span class="text-xs font-medium">21,265.24</span>
+                        </div>
+                    </div>
+                    <img class="w-full h-80 object-cover rounded-t-lg group-hover:scale-105 transition-all" src="assets/img/Image/resturant/8.jpg" alt="" />
+                    <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 pt-2 card-linear-gradient w-full">
+                        <span class="bg-pink-600 text-xs text-white rounded-full px-3 py-1 mb-3 inline-flex">Italian</span>
+                        <div class="flex text-white items-center mb-2">
+                        <h2 class="text-xl capitalize font-semibold"> Italiano Melense Chicken </h2>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M15.6562 4.34313C16.4688 5.15625 16.6906 6.31875 16.4031 7.34688C17.3531 7.85 18 8.85 18 10C18 11.15 17.3531 12.15 16.4031 12.6531C16.7188 13.6812 16.4688 14.8156 15.6562 15.6562C14.8156 16.4688 13.6812 16.6906 12.6531 16.4031C12.15 17.3531 11.15 18 10 18C8.85 18 7.85 17.3531 7.34688 16.4031C6.31875 16.7188 5.15625 16.4688 4.34313 15.6562C3.53 14.8156 3.28125 13.6812 3.59687 12.6531C2.64687 12.15 2 11.15 2 10C2 8.85 2.64687 7.85 3.59687 7.34688C3.25312 6.31875 3.53 5.15625 4.34313 4.34313C5.15625 3.53 6.31875 3.28125 7.34688 3.59687C7.85 2.64687 8.85 2 10 2C11.15 2 12.15 2.64687 12.6531 3.59687C13.6812 3.25312 14.8156 3.53 15.6562 4.34313Z" fill="#00AB55" />
+                            <path d="M7 10L8.64645 11.6464C8.84171 11.8417 9.15829 11.8417 9.35355 11.6464L13 8" stroke="white" stroke-width="1.2" stroke-linecap="round" />
+                        </svg>
+                        </div>
+                        <p class="text-sm font-normal text-white mb-4"> Manhattan, USA </p>
+                    </div>
+                    </a>
+                    <div class="flex relative z-10 justify-between p-6 bg-gray-100 dark:bg-foreground rounded-b-lg">
+                    <div class="flex">
+                        <div class="flex">
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        </div>
+                        <span class="text-base mx-2 dark:text-gray-100">4.5</span>
+                        <span class="text-gray-500 dark:text-gray-400">(56)</span>
+                    </div>
+                    <button type="button" class="text-gray-300 hover:text-pink-600 dark:text-gray-500 dark:hover:text-pink-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    </div>
+                </div> -->
+                <!-- <div class="swiper-slide overflow-hidden" data-aos="fade-up" data-aos-duration="800">
+                    <a href="event-listing-details-page.html" class="relative overflow-hidden group">
+                    <div class="absolute z-10 flex flex-wrap mb-2 items-center mt-5 ml-4 mr-1">
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-1 flex items-center">
+                        <svg class="w-3 h-auto mr-1" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M4.6498 2.39995H7.3498V1.64995C7.3498 1.40151 7.55043 1.19995 7.7998 1.19995C8.04918 1.19995 8.2498 1.40151 8.2498 1.64995V2.39995H8.9998C9.66168 2.39995 10.1998 2.93714 10.1998 3.59995V9.59995C10.1998 10.2618 9.66168 10.8 8.9998 10.8H2.9998C2.33699 10.8 1.7998 10.2618 1.7998 9.59995V3.59995C1.7998 2.93714 2.33699 2.39995 2.9998 2.39995H3.7498V1.64995C3.7498 1.40151 3.95043 1.19995 4.1998 1.19995C4.44918 1.19995 4.6498 1.40151 4.6498 1.64995V2.39995ZM2.6998 9.59995C2.6998 9.76495 2.83405 9.89995 2.9998 9.89995H8.9998C9.1648 9.89995 9.2998 9.76495 9.2998 9.59995V4.79995H2.6998V9.59995Z" fill="currentColor" />
+                        </svg>
+                        <span class="text-xs font-medium">12 April, 2022</span>
+                        </div>
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-1 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-auto text-green-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-xs font-medium">Auditorium</span>
+                        </div>
+                        <div class="bg-white rounded-full mb-2 px-3 py-1 mr-1 flex items-center">
+                        <svg class="w-3 h-auto text-blue-500 mr-1" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M7.19995 2.99995H4.79995L3.9112 1.66645C3.77808 1.46695 3.92058 1.19995 4.16058 1.19995H7.83933C8.07933 1.19995 8.22183 1.46695 8.0887 1.66645L7.19995 2.99995ZM4.79995 3.59995H7.19995C7.2712 3.64683 7.35183 3.69933 7.42683 3.75745C8.50683 4.43808 10.8 5.90433 10.8 8.99995C10.8 9.9937 9.9937 10.8 8.99995 10.8H2.99995C2.00583 10.8 1.19995 9.9937 1.19995 8.99995C1.19995 5.90433 3.49308 4.43808 4.5562 3.75745C4.64808 3.69933 4.7287 3.64683 4.79995 3.59995ZM6.37683 5.39995C6.37683 5.19183 6.20808 5.02308 5.98308 5.02308C5.79183 5.02308 5.62308 5.19183 5.62308 5.39995V5.51245C5.51808 5.53495 5.40183 5.56683 5.32495 5.60808C5.04558 5.73558 4.80183 5.97183 4.74183 6.31495C4.70808 6.5062 4.72683 6.69183 4.80558 6.8587C4.88433 7.0237 5.0062 7.13995 5.12995 7.22433C5.34745 7.37245 5.63433 7.4587 5.8537 7.52433L5.89495 7.53558C6.15745 7.6162 6.3337 7.67433 6.44433 7.75495C6.4912 7.7887 6.50808 7.81495 6.5137 7.83183C6.5212 7.84683 6.53245 7.88058 6.51933 7.95558C6.50808 8.0212 6.47245 8.07745 6.36933 8.12058C6.25495 8.16933 6.06933 8.1937 5.82933 8.1562C5.71683 8.13745 5.5162 8.06995 5.33808 8.00995C5.29683 7.99495 5.25558 7.98183 5.21808 7.9687C5.0212 7.90308 4.80933 8.00995 4.7437 8.20683C4.67808 8.4037 4.78495 8.61558 4.98183 8.66433C5.00433 8.6887 5.03245 8.69808 5.06433 8.70933C5.19558 8.75995 5.44495 8.8387 5.62308 8.87995V8.99995C5.62308 9.20808 5.79183 9.37683 5.98308 9.37683C6.20808 9.37683 6.37683 9.20808 6.37683 8.99995V8.89683C6.4762 8.87808 6.5737 8.83308 6.6637 8.81058C6.95995 8.68495 7.1962 8.4412 7.25808 8.08495C7.29183 7.88995 7.27683 7.70245 7.20183 7.53183C7.1287 7.36308 7.01058 7.23933 6.88495 7.14933C6.65808 6.98245 6.35433 6.89245 6.12745 6.82308L6.09558 6.81933C5.8462 6.7387 5.6662 6.68245 5.55183 6.6037C5.50308 6.56995 5.48808 6.54745 5.48433 6.53808C5.48058 6.53058 5.46933 6.50808 5.48058 6.44433C5.48808 6.40683 5.5162 6.34495 5.63433 6.29245C5.73933 6.23808 5.94183 6.20808 6.17058 6.22683C6.25308 6.25683 6.5062 6.30558 6.57933 6.32433C6.77808 6.3787 6.98433 6.2587 7.03683 6.05808C7.0912 5.85933 6.9712 5.65308 6.77058 5.60058C6.68808 5.57808 6.50058 5.54058 6.37683 5.51808V5.39995Z" fill="currentColor" />
+                        </svg>
+                        <span class="text-xs font-medium">Ticket Booking</span>
+                        </div>
+                    </div>
+                    <img class="w-full h-80 object-cover rounded-t-lg group-hover:scale-105 transition-all" src="assets/img/Image/resturant/9.jpg" alt="" />
+                    <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 pt-2 card-linear-gradient w-full">
+                        <span class="bg-pink-600 text-xs text-white rounded-full px-3 py-1 mb-3 inline-flex">Bengali</span>
+                        <div class="flex text-white items-center mb-2">
+                        <h2 class="text-xl capitalize font-semibold"> Chicken Curry Bhuna </h2>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M15.6562 4.34313C16.4688 5.15625 16.6906 6.31875 16.4031 7.34688C17.3531 7.85 18 8.85 18 10C18 11.15 17.3531 12.15 16.4031 12.6531C16.7188 13.6812 16.4688 14.8156 15.6562 15.6562C14.8156 16.4688 13.6812 16.6906 12.6531 16.4031C12.15 17.3531 11.15 18 10 18C8.85 18 7.85 17.3531 7.34688 16.4031C6.31875 16.7188 5.15625 16.4688 4.34313 15.6562C3.53 14.8156 3.28125 13.6812 3.59687 12.6531C2.64687 12.15 2 11.15 2 10C2 8.85 2.64687 7.85 3.59687 7.34688C3.25312 6.31875 3.53 5.15625 4.34313 4.34313C5.15625 3.53 6.31875 3.28125 7.34688 3.59687C7.85 2.64687 8.85 2 10 2C11.15 2 12.15 2.64687 12.6531 3.59687C13.6812 3.25312 14.8156 3.53 15.6562 4.34313Z" fill="#00AB55" />
+                            <path d="M7 10L8.64645 11.6464C8.84171 11.8417 9.15829 11.8417 9.35355 11.6464L13 8" stroke="white" stroke-width="1.2" stroke-linecap="round" />
+                        </svg>
+                        </div>
+                        <p class="text-sm font-normal text-white mb-4"> New Jursey, USA </p>
+                    </div>
+                    </a>
+                    <div class="flex justify-between p-6 bg-gray-100 relative z-10 dark:bg-foreground rounded-b-lg">
+                    <div class="flex">
+                        <div class="flex">
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        </div>
+                        <span class="text-base mx-2 dark:text-gray-100">4.5</span>
+                        <span class="text-gray-500 dark:text-gray-400">(56)</span>
+                    </div>
+                    <button type="button" class="text-gray-300 hover:text-pink-600 dark:text-gray-500 dark:hover:text-pink-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    </div>
+                </div> -->
+                <!-- <div class="swiper-slide overflow-hidden" data-aos="fade-up" data-aos-duration="800">
+                    <a href="event-listing-details-page.html" class="relative overflow-hidden group">
+                    <div class="absolute z-10 flex items-center mt-5 ml-4 mr-1">
+                        <div class="bg-white rounded-full px-3 py-1 flex items-center">
+                        <svg class="w-3 mr-1 h-auto text-green-500" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M4.6498 2.39995H7.3498V1.64995C7.3498 1.40151 7.55043 1.19995 7.7998 1.19995C8.04918 1.19995 8.2498 1.40151 8.2498 1.64995V2.39995H8.9998C9.66168 2.39995 10.1998 2.93714 10.1998 3.59995V9.59995C10.1998 10.2618 9.66168 10.8 8.9998 10.8H2.9998C2.33699 10.8 1.7998 10.2618 1.7998 9.59995V3.59995C1.7998 2.93714 2.33699 2.39995 2.9998 2.39995H3.7498V1.64995C3.7498 1.40151 3.95043 1.19995 4.1998 1.19995C4.44918 1.19995 4.6498 1.40151 4.6498 1.64995V2.39995ZM2.6998 9.59995C2.6998 9.76495 2.83405 9.89995 2.9998 9.89995H8.9998C9.1648 9.89995 9.2998 9.76495 9.2998 9.59995V4.79995H2.6998V9.59995Z" fill="currentColor" />
+                        </svg>
+                        <span class="text-xs font-medium">Instant Booking</span>
+                        </div>
+                    </div>
+                    <img class="w-full h-80 object-cover group-hover:scale-105 transition-all rounded-t-lg" src="assets/img/Image/resturant/1.jpg" alt="" />
+                    <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 pt-2 card-linear-gradient w-full">
+                        <span class="bg-pink-600 text-xs text-white rounded-full px-3 py-1 mb-3 inline-flex">Coaching</span>
+                        <div class="flex text-white items-center mb-2">
+                        <h2 class="text-xl capitalize font-semibold"> Liam Ancor - Physics Trinee </h2>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M15.6562 4.34313C16.4688 5.15625 16.6906 6.31875 16.4031 7.34688C17.3531 7.85 18 8.85 18 10C18 11.15 17.3531 12.15 16.4031 12.6531C16.7188 13.6812 16.4688 14.8156 15.6562 15.6562C14.8156 16.4688 13.6812 16.6906 12.6531 16.4031C12.15 17.3531 11.15 18 10 18C8.85 18 7.85 17.3531 7.34688 16.4031C6.31875 16.7188 5.15625 16.4688 4.34313 15.6562C3.53 14.8156 3.28125 13.6812 3.59687 12.6531C2.64687 12.15 2 11.15 2 10C2 8.85 2.64687 7.85 3.59687 7.34688C3.25312 6.31875 3.53 5.15625 4.34313 4.34313C5.15625 3.53 6.31875 3.28125 7.34688 3.59687C7.85 2.64687 8.85 2 10 2C11.15 2 12.15 2.64687 12.6531 3.59687C13.6812 3.25312 14.8156 3.53 15.6562 4.34313Z" fill="#00AB55" />
+                            <path d="M7 10L8.64645 11.6464C8.84171 11.8417 9.15829 11.8417 9.35355 11.6464L13 8" stroke="white" stroke-width="1.2" stroke-linecap="round" />
+                        </svg>
+                        </div>
+                        <p class="text-sm font-normal text-white mb-4"> New York, USA </p>
+                    </div>
+                    </a>
+                    <div class="flex justify-between p-6 relative z-10 bg-gray-100 dark:bg-foreground rounded-b-lg">
+                    <div class="flex">
+                        <div class="flex">
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        </div>
+                        <span class="text-base mx-2 dark:text-gray-100">4.5</span>
+                        <span class="text-gray-500 dark:text-gray-400">(56)</span>
+                    </div>
+                    <button type="button" class="text-gray-300 hover:text-pink-600 dark:text-gray-500 dark:hover:text-pink-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    </div>
+                </div> -->
+                <!-- <div class="swiper-slide overflow-hidden" data-aos="fade-up" data-aos-duration="800">
+                    <a href="event-listing-details-page.html" class="relative overflow-hidden group">
+                    <div class="absolute z-10 flex items-center mt-5 ml-4 mr-1">
+                        <div class="bg-white rounded-full px-3 py-1 flex items-center">
+                        <svg class="w-3 mr-1 h-auto text-green-500" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M4.6498 2.39995H7.3498V1.64995C7.3498 1.40151 7.55043 1.19995 7.7998 1.19995C8.04918 1.19995 8.2498 1.40151 8.2498 1.64995V2.39995H8.9998C9.66168 2.39995 10.1998 2.93714 10.1998 3.59995V9.59995C10.1998 10.2618 9.66168 10.8 8.9998 10.8H2.9998C2.33699 10.8 1.7998 10.2618 1.7998 9.59995V3.59995C1.7998 2.93714 2.33699 2.39995 2.9998 2.39995H3.7498V1.64995C3.7498 1.40151 3.95043 1.19995 4.1998 1.19995C4.44918 1.19995 4.6498 1.40151 4.6498 1.64995V2.39995ZM2.6998 9.59995C2.6998 9.76495 2.83405 9.89995 2.9998 9.89995H8.9998C9.1648 9.89995 9.2998 9.76495 9.2998 9.59995V4.79995H2.6998V9.59995Z" fill="currentColor" />
+                        </svg>
+                        <span class="text-xs font-medium">Instant Booking</span>
+                        </div>
+                    </div>
+                    <img class="w-full h-80 object-cover rounded-t-lg group-hover:scale-105 transition-all" src="assets/img/Image/landing-page-image/home-decor.jpg" alt="" />
+                    <div class="absolute bottom-0 left-0 pb-0 pl-5 rounded-b-lg pt-2 bg-gray-900 bg-opacity-30 w-full">
+                        <span class="bg-pink-600 text-xs text-white rounded-full px-3 py-1 mb-3 inline-flex">Apartment</span>
+                        <div class="flex text-white items-center mb-2">
+                        <h2 class="text-xl capitalize font-semibold"> Liam Ancor - Physics Trinee </h2>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                            <path d="M15.6562 4.34313C16.4688 5.15625 16.6906 6.31875 16.4031 7.34688C17.3531 7.85 18 8.85 18 10C18 11.15 17.3531 12.15 16.4031 12.6531C16.7188 13.6812 16.4688 14.8156 15.6562 15.6562C14.8156 16.4688 13.6812 16.6906 12.6531 16.4031C12.15 17.3531 11.15 18 10 18C8.85 18 7.85 17.3531 7.34688 16.4031C6.31875 16.7188 5.15625 16.4688 4.34313 15.6562C3.53 14.8156 3.28125 13.6812 3.59687 12.6531C2.64687 12.15 2 11.15 2 10C2 8.85 2.64687 7.85 3.59687 7.34688C3.25312 6.31875 3.53 5.15625 4.34313 4.34313C5.15625 3.53 6.31875 3.28125 7.34688 3.59687C7.85 2.64687 8.85 2 10 2C11.15 2 12.15 2.64687 12.6531 3.59687C13.6812 3.25312 14.8156 3.53 15.6562 4.34313Z" fill="#00AB55" />
+                            <path d="M7 10L8.64645 11.6464C8.84171 11.8417 9.15829 11.8417 9.35355 11.6464L13 8" stroke="white" stroke-width="1.2" stroke-linecap="round" />
+                        </svg>
+                        </div>
+                        <p class="text-sm font-normal text-white mb-4"> New York, USA </p>
+                    </div>
+                    </a>
+                    <div class="flex justify-between p-6 bg-gray-100 dark:bg-foreground rounded-b-lg">
+                    <div class="flex">
+                        <div class="flex">
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-auto flex-shrink-0 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        </div>
+                        <span class="text-base mx-2 dark:text-gray-100">4.5</span>
+                        <span class="text-gray-500 dark:text-gray-400">(56)</span>
+                    </div>
+                    <button type="button" class="text-gray-300 hover:text-pink-600 dark:text-gray-500 dark:hover:text-pink-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    </div>
+                </div> -->
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+            </div>
+            <div class="swiper-button-prev left-2 lg:-left-3 after:hidden">
+                <button type="button" class="bg-white dark:bg-foreground text-blue-500 hover:bg-blue-500 hover:text-white rounded-full p-3 shadow-small-content-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                </button>
+            </div>
+            <div class="swiper-button-next absolute right-2 lg:-right-3 after:hidden">
+                <button type="button" class="bg-white dark:bg-foreground text-blue-500 hover:bg-blue-500 hover:text-white rounded-full p-3 shadow-small-content-1">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+                </button>
+            </div>
+            </div>
+            <div class="relative w-24 mx-auto mt-10"></div>
+        </div>
+        </section>
+        <!-- end::resturant-listing  -->
+        <!-- start::listing-area  -->
+        <section class="py-20 border-b border-gray-200 dark:border-foreground dark:bg-background">
+        <div class="container mx-auto lg:p-0 p-5">
+            <div class="flex lg:flex-row flex-col lg:text-left text-center flex-wrap items-center justify-between mb-12">
+            <div class="mb-4 lg:mb-0" data-aos="fade-up">
+                <h2 class="text-2xl lg:text-3xl font-medium capitalize mb-2 dark:text-gray-100"> listing by University </h2>
+                <p class="text-sm lg:text-base text-gray-500 font-normal dark:text-gray-400"> A selection of listing verified for quality </p>
+            </div>
+            <div data-aos="fade-up">
+                <a href="listing-list.html" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 flex items-center"> Explore More <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="w-5 ml-3" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg> </a>
+            </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
+                
+                
+                {% for deposit_point in deposit_points %}
+                    <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                        <div class="relative group overflow-hidden rounded-lg">
+                        <img class="w-full h-96 object-cover rounded-lg group-hover:scale-105 transition-all" src="{{deposit_point.image_for_display.url}}" alt="" />
+                        <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 rounded-b-lg pt-2 card-linear-gradient w-full">
+                            <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-orange-400 mr-2 mt-1">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            <div>
+                                <p class="text-lg text-white font-semibold">{{deposit_point.name}}</p>
+                                <p class="text-14 text-gray-100">{{deposit_point.items.count}} items available</p>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </a>
+                {% endfor %}
+                    
+
+            <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                <div class="relative group overflow-hidden rounded-lg">
+                <img class="w-full h-96 object-cover rounded-lg group-hover:scale-105 transition-all" src="assets/img/Image/landing-page-image/building-2.jpg" alt="" />
+                <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 rounded-b-lg pt-2 card-linear-gradient w-full">
+                    <div class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-orange-400 mr-2 mt-1">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <p class="text-lg text-white font-semibold">Los Angeles</p>
+                        <p class="text-14 text-gray-100">30 Listing available</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </a>
+            <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                <div class="relative group overflow-hidden rounded-lg">
+                <img class="w-full h-96 object-cover rounded-lg group-hover:scale-105 transition-all" src="assets/img/Image/landing-page-image/building-3.jpg" alt="" />
+                <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 rounded-b-lg pt-2 card-linear-gradient w-full">
+                    <div class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-orange-400 mr-2 mt-1">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <p class="text-lg text-white font-semibold">Los Angeles</p>
+                        <p class="text-14 text-gray-100">20 Listing available</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </a>
+            <a href="event-listing-details-page.html" data-aos="fade-up" data-aos-duration="800">
+                <div class="relative group overflow-hidden rounded-lg">
+                <img class="w-full h-96 object-cover rounded-lg group-hover:scale-105 transition-all" src="assets/img/Image/landing-page-image/building-4.jpg" alt="" />
+                <div class="absolute bottom-0 top-1/2 flex items-start flex-col justify-end left-0 pb-5 pl-5 rounded-b-lg pt-2 card-linear-gradient w-full">
+                    <div class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-orange-400 mr-2 mt-1">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <p class="text-lg text-white font-semibold">Los Angeles</p>
+                        <p class="text-14 text-gray-100">40 Listing available</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </a>
+            </div>
+        </div>
+        </section>
+        <!-- end::listing-area  -->
+        <!-- start::client-4  -->
+        <section class="py-20 border-b border-gray-200 dark:border-foreground dark:bg-background">
+        <div class="container mx-auto lg:p-0 p-5">
+            <div class="flex justify-between items-center flex-wrap mb-12">
+            <div class="flex-1" data-aos="fade-up">
+                <h1 class="text-2xl dark:text-gray-100 lg:text-3xl font-medium capitalize mb-2"> Clients Says </h1>
+                <h6 class="text-sm lg:text-base text-gray-500 dark:text-gray-400 font-normal"> A selection of listing verified for quality </h6>
+            </div>
+            <div class="relative w-24 flex-no-shrink" data-aos="fade-up" data-aos-duration="800">
+                <div class="swiper-button-prev after:hidden">
+                <button type="button" class="border border-gray-200 text-gray-400 hover:border-none hover:bg-blue-100 hover:text-blue-500 rounded-full p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                </div>
+                <div class="swiper-button-next after:hidden">
+                <button type="button" class="border border-gray-200 text-gray-400 hover:border-none hover:bg-blue-100 hover:text-blue-500 rounded-full p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+                </div>
+            </div>
+            </div>
+            <!-- Slider main container -->
+            <div class="relative">
+            <div class="swiper swiper-client-4">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper relative h-full">
+                <!-- Slides -->
+                <div class="swiper-slide pb-10" data-aos="fade-up" data-aos-duration="800">
+                    <div class="shadow-front-3 dark:bg-foreground rounded-lg p-5 relative overflow-hidden group cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-blue-500 hover:rounded-none">
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-[24px] mb-3"> Nation yet I century way of the into he gone day time. And installer. To pity the left didn't doubting as for recommendation up omens, the place were coffee shut for the on anyone but it noise not has eye. </p>
+                    <div class="flex mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-16 h-16 border-2 border-white rounded-full mr-6" src="assets/img/faces/10.jpg" alt="" />
+                        <div>
+                        <h5 class="text-sm text-gray-700 dark:text-gray-100 font-medium mb-1 group-hover:text-blue-500"> Gage Paquette </h5>
+                        <p class="text-sm text-gray-500 dark:text-gray-400"> Australia </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide pb-10" data-aos="fade-up" data-aos-duration="800">
+                    <div class="shadow-front-3 dark:bg-foreground rounded-lg p-5 relative overflow-hidden group cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-blue-500 hover:rounded-none">
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-[24px] mb-3"> Nation yet I century way of the into he gone day time. And installer. To pity the left didn't doubting as for recommendation up omens, the place were coffee shut for the on anyone but it noise not has eye. </p>
+                    <div class="flex mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-16 h-16 border-2 border-white rounded-full mr-6" src="assets/img/faces/10.jpg" alt="" />
+                        <div>
+                        <h5 class="text-sm text-gray-700 dark:text-gray-100 font-medium mb-1 group-hover:text-blue-500"> Gage Paquette </h5>
+                        <p class="text-sm text-gray-500 dark:text-gray-400"> Australia </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide pb-10" data-aos="fade-up" data-aos-duration="800">
+                    <div class="shadow-front-3 dark:bg-foreground rounded-lg p-5 relative overflow-hidden group cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-blue-500 hover:rounded-none">
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-[24px] mb-3"> Nation yet I century way of the into he gone day time. And installer. To pity the left didn't doubting as for recommendation up omens, the place were coffee shut for the on anyone but it noise not has eye. </p>
+                    <div class="flex mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-16 h-16 border-2 border-white rounded-full mr-6" src="assets/img/faces/10.jpg" alt="" />
+                        <div>
+                        <h5 class="text-sm text-gray-700 dark:text-gray-100 font-medium mb-1 group-hover:text-blue-500"> Gage Paquette </h5>
+                        <p class="text-sm text-gray-500 dark:text-gray-400"> Australia </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide pb-10" data-aos="fade-up" data-aos-duration="800">
+                    <div class="shadow-front-3 dark:bg-foreground rounded-lg p-5 relative overflow-hidden group cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-blue-500 hover:rounded-none">
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-[24px] mb-3"> Nation yet I century way of the into he gone day time. And installer. To pity the left didn't doubting as for recommendation up omens, the place were coffee shut for the on anyone but it noise not has eye. </p>
+                    <div class="flex mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-16 h-16 border-2 border-white rounded-full mr-6" src="assets/img/faces/10.jpg" alt="" />
+                        <div>
+                        <h5 class="text-sm text-gray-700 dark:text-gray-100 font-medium mb-1 group-hover:text-blue-500"> Gage Paquette </h5>
+                        <p class="text-sm text-gray-500 dark:text-gray-400"> Australia </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide pb-10" data-aos="fade-up" data-aos-duration="800">
+                    <div class="shadow-front-3 dark:bg-foreground rounded-lg p-5 relative overflow-hidden group cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-blue-500 hover:rounded-none">
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-[24px] mb-3"> Nation yet I century way of the into he gone day time. And installer. To pity the left didn't doubting as for recommendation up omens, the place were coffee shut for the on anyone but it noise not has eye. </p>
+                    <div class="flex mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-16 h-16 border-2 border-white rounded-full mr-6" src="assets/img/faces/10.jpg" alt="" />
+                        <div>
+                        <h5 class="text-sm text-gray-700 dark:text-gray-100 font-medium mb-1 group-hover:text-blue-500"> Gage Paquette </h5>
+                        <p class="text-sm text-gray-500 dark:text-gray-400"> Australia </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+            </div>
+            </div>
+            <div class="relative w-24 mx-auto mt-10"></div>
+        </div>
+        </section>
+        <!-- end::client-4  -->
+
+
+        <!-- start::blogs  -->
+        <!-- <section class="py-20 border-b border-gray-200 dark:border-foreground dark:bg-background">
+        <div class="container mx-auto lg:p-0 p-5">
+            <div class="flex lg:flex-row flex-col lg:text-left text-center flex-wrap items-center justify-between mb-12">
+            <div class="lg:mb-0 mb-4">
+                <h1 class="text-2xl dark:text-gray-200 lg:text-3xl font-medium capitalize mb-2" data-aos="fade-up" data-aos-duration="800"> Our Blogs </h1>
+                <h6 class="text-sm dark:text-gray-400 lg:text-base text-gray-500 font-normal" data-aos="fade-up" data-aos-duration="1000"> A selection of listing verified for quality </h6>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="800">
+                <a href="blog-list-page.html" type="button" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 flex items-center"> Explore More <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="w-5 ml-3" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg> </a>
+            </div>
+            </div> -->
+            <!-- Slider main container -->
+            <!-- <div class="relative">
+            <div class="swiper"> -->
+                <!-- Additional required wrapper -->
+                <!-- <div class="swiper-wrapper relative h-full"> -->
+                <!-- Slides -->
+                <!-- <div class="swiper-slide mt-4 lg:mb-8" data-aos="fade-up" data-aos-duration="800">
+                    <div class="shadow-front-1 rounded-lg [&>div]:hover:shadow-front-3 group dark:bg-foreground">
+                    <a href="blog-details-page.html">
+                        <img class="w-full h-64 object-cover rounded-t-lg" src="assets/img/Image/landing-page-image/house.jpg" alt="" />
+                    </a>
+                    <div class="p-8 dark:bg-foreground rounded-b-lg shadow-front-1">
+                        <a href="blog-details-page.html" class="text-2xl group-hover:text-blue-500 font-semibold text-gray-700 dark:text-gray-100 mb-4"> #1 Sell Your House Today </a>
+                        <div class="text-sm text-gray-500 mb-7 dark:text-gray-400"> Nation yet I century way of the into he gone day time. And installer. </div>
+                        <div class="flex justify-between">
+                        <div class="text-sm font-normal dark:text-gray-400"> 22 Feb, 2022 </div>
+                        <div class="flex">
+                            <div class="flex mr-5">
+                            <svg class="h-5 w-5 group-hover:text-blue-500 text-gray-500 mr-1 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg> <span class="text-sm text-gray-500 dark:text-gray-400">245</span>
+                            </div>
+                            <div class="flex mr-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="h-5 w-5 group-hover:text-blue-500 text-gray-500 mr-1 dark:text-gray-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                            </svg> <span class="text-sm text-gray-500 dark:text-gray-400">245</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide mt-4 lg:mb-8" data-aos="fade-up" data-aos-duration="800">
+                    <div class="shadow-front-1 rounded-lg [&>div]:hover:shadow-front-3 group dark:bg-foreground">
+                    <a href="blog-details-page.html">
+                        <img class="w-full h-64 object-cover rounded-t-lg" src="assets/img/Image/event-landing-page/concert.jpg" alt="" />
+                    </a>
+                    <div class="p-8 dark:bg-foreground rounded-b-lg shadow-front-1">
+                        <a href="blog-details-page.html" class="text-2xl group-hover:text-blue-500 font-semibold text-gray-700 dark:text-gray-100 mb-4"> Musical Event House </a>
+                        <div class="text-sm text-gray-500 mb-7 dark:text-gray-400"> Nation yet I century way of the into he gone day time. And installer. </div>
+                        <div class="flex justify-between">
+                        <div class="text-sm font-normal dark:text-gray-400"> 22 Feb, 2022 </div>
+                        <div class="flex">
+                            <div class="flex mr-5">
+                            <svg class="h-5 w-5 group-hover:text-blue-500 text-gray-500 mr-1 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg> <span class="text-sm text-gray-500 dark:text-gray-400">245</span>
+                            </div>
+                            <div class="flex mr-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="h-5 w-5 group-hover:text-blue-500 text-gray-500 mr-1 dark:text-gray-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                            </svg> <span class="text-sm text-gray-500 dark:text-gray-400">245</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide mt-4 lg:mb-8" data-aos="fade-up" data-aos-duration="800">
+                    <div class="shadow-front-1 rounded-lg [&>div]:hover:shadow-front-3 group dark:bg-foreground">
+                    <a href="blog-details-page.html">
+                        <img class="w-full h-64 object-cover rounded-t-lg" src="assets/img/Image/landing-page-image/dish.jpg" alt="" />
+                    </a>
+                    <div class="p-8 dark:bg-foreground rounded-b-lg shadow-front-1">
+                        <a href="blog-details-page.html" class="text-2xl group-hover:text-blue-500 font-semibold text-gray-700 dark:text-gray-100 mb-4"> Musical Event House </a>
+                        <div class="text-sm text-gray-500 mb-7 dark:text-gray-400"> Nation yet I century way of the into he gone day time. And installer. </div>
+                        <div class="flex justify-between">
+                        <div class="text-sm font-normal dark:text-gray-400"> 22 Feb, 2022 </div>
+                        <div class="flex">
+                            <div class="flex mr-5">
+                            <svg class="h-5 w-5 group-hover:text-blue-500 text-gray-500 mr-1 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg> <span class="text-sm text-gray-500 dark:text-gray-400">245</span>
+                            </div>
+                            <div class="flex mr-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="h-5 w-5 group-hover:text-blue-500 text-gray-500 mr-1 dark:text-gray-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                            </svg> <span class="text-sm text-gray-500 dark:text-gray-400">245</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide mt-4 lg:mb-8" data-aos="fade-up" data-aos-duration="800">
+                    <div class="shadow-front-1 rounded-lg [&>div]:hover:shadow-front-3 group dark:bg-foreground">
+                    <a href="blog-details-page.html">
+                        <img class="w-full h-64 object-cover rounded-t-lg" src="assets/img/Image/landing-page-image/house.jpg" alt="" />
+                    </a>
+                    <div class="p-8 dark:bg-foreground rounded-b-lg shadow-front-1">
+                        <a href="blog-details-page.html" class="text-2xl group-hover:text-blue-500 font-semibold text-gray-700 dark:text-gray-100 mb-4"> Musical Event House </a>
+                        <div class="text-sm text-gray-500 mb-7 dark:text-gray-400"> Nation yet I century way of the into he gone day time. And installer. </div>
+                        <div class="flex justify-between">
+                        <div class="text-sm font-normal dark:text-gray-400"> 22 Feb, 2022 </div>
+                        <div class="flex">
+                            <div class="flex mr-5">
+                            <svg class="h-5 w-5 group-hover:text-blue-500 text-gray-500 mr-1 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg> <span class="text-sm text-gray-500 dark:text-gray-400">245</span>
+                            </div>
+                            <div class="flex mr-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="h-5 w-5 group-hover:text-blue-500 text-gray-500 mr-1 dark:text-gray-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                            </svg> <span class="text-sm text-gray-500 dark:text-gray-400">245</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev left-2 lg:-left-3 after:hidden">
+                <button type="button" class="bg-white dark:bg-foreground text-blue-500 hover:bg-blue-500 hover:text-white rounded-full p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                </button>
+            </div>
+            <div class="swiper-button-next absolute right-2 lg:-right-3 after:hidden">
+                <button type="button" class="bg-white dark:bg-foreground text-blue-500 hover:bg-blue-500 hover:text-white rounded-full p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+                </button>
+            </div>
+            </div>
+        </div>
+        </section> -->
+        <!-- end::blogs  -->
+        <!-- start::logos  -->
+        <section class="py-20 border-b border-gray-200 dark:border-foreground dark:bg-background px-5">
+        <div class="container mx-auto">
+            <div class="grid lg:grid-cols-5 grid-cols-2 gap-7 items-center justify-center">
+            <img class="max-w-full text-center flex-1" data-aos="fade-up" data-aos-duration="800" src="{% static 'home/assets/img/company/airbnb.png' %}" alt="" />
+            <img class="max-w-full text-center flex-1" data-aos="fade-up" data-aos-duration="800" src="{% static 'home/assets/img/company/zillow.png' %}" alt="" />
+            <img class="max-w-full text-center flex-1" data-aos="fade-up" data-aos-duration="800" src="{% static 'home/assets/img/company/trulia.png' %}" alt="" />
+            <img class="max-w-full text-center flex-1" data-aos="fade-up" data-aos-duration="800" src="{% static 'home/assets/img/company/realtor.png' %}" alt="" />
+            <img class="max-w-full text-center flex-1" data-aos="fade-up" data-aos-duration="800" src="{% static 'home/assets/img/company/home-finder.png' %}" alt="" />
+            </div>
+        </div>
+        </section>
+        <!-- end::logos  -->
+        <!-- start::dashboard  -->
+        <section class="bg-blue-50 dark:bg-background">
+        <div class="container mx-auto py-16 lg:px-0 px-5">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-10" data-aos="fade-up" data-aos-duration="800">
+            <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-8 rounded-lg mr-4">
+                <svg class="w-10 h-auto flex-shrink-0 text-blue-500" width="47" height="35" viewBox="0 0 47 35" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                    <path d="M44.0087 5.14005C42.5931 5.14005 41.4451 6.24704 41.4451 7.61205C41.4451 8.19598 41.6861 8.70977 42.0372 9.1331L33.6656 15.5897C33.1885 15.9577 32.625 16.1319 32.0682 16.1319C31.1381 16.1319 30.2272 15.6455 29.7706 14.7645L24.6378 4.85654C25.471 4.4502 26.0638 3.63444 26.0638 2.66805C26.0638 1.30304 24.9158 0.196045 23.5002 0.196045C22.0847 0.196045 20.9367 1.30304 20.9367 2.66805C20.9367 3.63444 21.5268 4.4502 22.365 4.85654L17.2275 14.7654C16.7709 15.5765 15.8576 16.1327 14.9283 16.1327C14.372 16.1327 13.8084 15.9585 13.3309 15.5905L4.96331 9.13387C5.3142 8.709 5.55533 8.19915 5.55533 7.61205C5.55533 6.24704 4.40734 5.14005 2.99178 5.14005C1.57621 5.14005 0.428223 6.24472 0.428223 7.61205C0.428223 8.97705 1.57621 10.084 2.99178 10.084C3.1512 10.084 3.28987 10.0234 3.44128 9.99652L7.35311 30.7459C7.79684 33.0968 9.92139 34.804 12.3968 34.804H34.6036C37.0815 34.804 39.2044 33.0953 39.6482 30.7446L43.56 9.99521C43.7123 10.0222 43.8484 10.084 44.0087 10.084C45.4242 10.084 46.5722 8.97705 46.5722 7.61205C46.5722 6.24472 45.4266 5.14005 44.0087 5.14005ZM37.1271 30.3004C36.9028 31.4746 35.8453 32.332 34.6036 32.332H12.3968C11.1575 32.332 10.0968 31.4784 9.87492 30.3019L6.73938 13.6684L11.7319 17.5201C12.638 18.2192 13.7739 18.6039 14.9307 18.6039C16.8879 18.6039 18.6471 17.5564 19.5211 15.8701L23.5002 8.19915L27.4793 15.8739C28.3534 17.5603 30.1126 18.6078 32.0697 18.6078C33.2265 18.6078 34.3625 18.2228 35.2685 17.524L40.2611 13.6723L37.1271 30.3004Z" fill="currentColor" />
+                </svg>
+                </div>
+                <div>
+                <h3 class="text-4xl text-gray-700 dark:text-gray-300 font-bold mb-2"> 10K+ </h3>
+                <p class="text-gray-500 dark:text-gray-400">Listing</p>
+                </div>
+            </div>
+            <div class="flex items-center mb-4">
+                <div class="bg-green-100 p-8 rounded-lg mr-4">
+                <svg class="w-10 h-auto flex-shrink-0 text-green-500" width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                    <path d="M35.1714 26.3842C36.4512 26.3842 37.3885 27.4928 37.1361 28.7275C35.5049 34.7749 30.0163 39.3622 23.5002 39.3622C16.9842 39.3622 11.4956 34.7749 9.86431 28.7275C9.53986 27.4928 10.5493 26.3842 11.829 26.3842H35.1714ZM33.9277 29.2682H13.0728C14.7491 33.5221 18.8137 36.4782 23.5002 36.4782C28.1867 36.4782 32.2514 33.5221 33.9277 29.2682ZM14.5328 17.4168C13.965 18.0657 13.5594 18.9309 13.3612 19.706C13.1719 20.481 12.3878 20.9497 11.6127 20.7514C10.8377 20.5621 10.369 19.7781 10.5673 19.003C10.8557 17.8584 11.4505 16.5606 12.3518 15.5242C13.262 14.4787 14.5959 13.5865 16.2902 13.5865C17.9846 13.5865 19.3184 14.4787 20.2287 15.5242C21.1299 16.5606 21.7248 17.8584 22.0132 19.003C22.2114 19.7781 21.7428 20.5621 20.9677 20.7514C20.1926 20.9497 19.4085 20.481 19.2193 19.706C19.021 18.9309 18.6154 18.0657 18.0477 17.4168C17.4979 16.7769 16.9031 16.4705 16.2902 16.4705C15.6774 16.4705 15.0825 16.7769 14.5328 17.4168ZM26.0327 20.7514C25.2577 20.5621 24.789 19.7781 24.9873 19.003C25.2757 17.8584 25.8705 16.5606 26.7718 15.5242C27.682 14.4787 29.0159 13.5865 30.7102 13.5865C32.4046 13.5865 33.7384 14.4787 34.6487 15.5242C35.5499 16.5606 36.1448 17.8584 36.4332 19.003C36.6314 19.7781 36.1628 20.5621 35.3877 20.7514C34.6126 20.9497 33.8285 20.481 33.6393 19.706C33.441 18.9309 33.0354 18.0657 32.4677 17.4168C31.9179 16.7769 31.3231 16.4705 30.7102 16.4705C30.0974 16.4705 29.5025 16.7769 28.9528 17.4168C28.385 18.0657 27.9794 18.9309 27.7812 19.706C27.5919 20.481 26.8078 20.9497 26.0327 20.7514ZM46.5722 23.5002C46.5722 36.2439 36.2439 46.5722 23.5002 46.5722C10.7565 46.5722 0.428223 36.2439 0.428223 23.5002C0.428223 10.7565 10.7565 0.428223 23.5002 0.428223C36.2439 0.428223 46.5722 10.7565 46.5722 23.5002ZM23.5002 3.31222C12.3518 3.31222 3.31222 12.3518 3.31222 23.5002C3.31222 34.6487 12.3518 43.6882 23.5002 43.6882C34.6487 43.6882 43.6882 34.6487 43.6882 23.5002C43.6882 12.3518 34.6487 3.31222 23.5002 3.31222Z" fill="currentColor" />
+                </svg>
+                </div>
+                <div>
+                <h3 class="text-4xl text-gray-700 font-bold mb-2 dark:text-gray-300"> 5K+ </h3>
+                <p class="text-gray-500 dark:text-gray-400">happy Customers</p>
+                </div>
+            </div>
+            <div class="flex items-center mb-4">
+                <div class="bg-purple-100 p-8 rounded-lg mr-4">
+                <svg class="w-10 h-auto flex-shrink-0 text-purple-500" width="38" height="47" viewBox="0 0 38 47" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                    <path d="M18.6539 9.80122C13.9818 9.80122 10.1942 13.3431 10.1942 17.7322C10.1942 22.1105 13.9808 25.6632 18.5674 25.6632C23.1539 25.6632 27.0271 22.1123 27.0271 17.7322C27.0271 13.3431 23.326 9.80122 18.6539 9.80122ZM18.6539 22.7792C15.6834 22.7792 13.2704 20.5171 13.2704 17.7322C13.2704 14.9492 15.6853 12.6852 18.5674 12.6852C21.4494 12.6852 23.9508 14.9474 23.9508 17.7322C23.9508 20.5171 21.6244 22.7792 18.6539 22.7792ZM37.1115 17.7322C37.1115 16.2452 35.4513 14.9816 35.06 13.6108C34.6556 12.1913 35.4069 10.3212 34.64 9.07842C33.8627 7.81847 31.7531 7.49943 30.663 6.47651C29.5719 5.45359 29.2325 3.47625 27.8876 2.74624C26.5648 2.02857 24.5595 2.72922 23.053 2.35167C21.586 1.98468 20.2401 0.428223 18.6539 0.428223C17.0677 0.428223 15.7218 1.98468 14.2606 2.35149C12.7417 2.73002 10.7421 2.02704 9.42317 2.74534C7.9927 3.47355 7.73891 5.45179 6.6478 6.47381C5.55765 7.49673 3.44752 7.81487 2.6698 9.07572C1.90169 10.3149 2.6525 12.1895 2.24874 13.6045C1.85651 14.9834 0.196289 16.2452 0.196289 17.7322C0.196289 19.2193 1.85651 20.4828 2.24777 21.8536C2.65221 23.2731 1.90054 25.1432 2.6674 26.386C3.4456 27.646 5.55476 27.9614 6.64491 28.9888C7.73603 30.0118 8.07538 31.9891 9.41932 32.7191C10.7402 33.4357 12.7475 32.7354 14.2539 33.1139C15.7218 33.4771 17.0677 35.0362 18.6539 35.0362C20.2401 35.0362 21.5879 33.4798 23.051 33.113C24.5622 32.7338 26.5599 33.4377 27.8856 32.7193C29.2295 31.9904 29.5698 30.0128 30.6609 28.9899C31.7521 27.967 33.8612 27.6489 34.6399 26.3889C35.4071 25.1461 34.6562 23.276 35.0607 21.8565C35.4484 20.481 37.1115 19.2193 37.1115 17.7322ZM32.0837 21.1119C31.6603 22.5981 31.9549 24.0049 31.9208 24.9215C31.1654 25.3693 29.6482 25.857 28.4811 26.9511C27.3246 28.0353 26.7901 29.4737 26.3181 30.1731C25.4342 30.2104 23.8629 29.923 22.2536 30.3266C20.6472 30.7291 19.4273 31.7469 18.6505 32.1101C17.8787 31.7495 16.651 30.7276 15.0474 30.3266C13.4411 29.9231 11.8712 30.2093 10.982 30.1718C10.5114 29.4665 9.98266 28.0425 8.82041 26.952C7.65624 25.8525 6.1431 25.3748 5.38172 24.9152C5.34807 24.086 5.64705 22.608 5.21926 21.1119C4.79002 19.6059 3.70323 18.4631 3.31582 17.734C3.69996 17.0108 4.78954 15.8621 5.21926 14.3543C5.64551 12.8583 5.34711 11.391 5.38239 10.5448C6.13743 10.0967 7.65499 9.61016 8.82205 8.51514C9.98266 7.42913 10.5114 5.99074 10.9824 5.29047C11.8663 5.25649 13.4473 5.53723 15.047 5.13716C16.6562 4.73385 17.8666 3.7186 18.65 3.35359C19.4217 3.71337 20.6467 4.73521 22.2541 5.13806C23.8634 5.54101 25.4274 5.25478 26.3186 5.29227C26.7839 5.98172 27.3232 7.42913 28.4826 8.51514C29.639 9.60024 31.1743 10.1022 31.9213 10.5448C31.9554 11.3805 31.6567 12.8556 32.084 14.3552C32.5136 15.8612 33.6 17.0031 33.9865 17.7322C33.6122 18.4532 32.5163 19.6068 32.0837 21.1119ZM29.392 36.4512C29.2177 35.6711 28.4153 35.1687 27.5712 35.3345C26.7421 35.4965 26.2071 36.2601 26.3811 37.0397L28.0605 43.6945L19.3451 39.6092C18.9125 39.4064 18.4017 39.4064 17.9694 39.6092L9.42509 43.8198L10.9334 37.0397C11.1077 36.2596 10.5729 35.4968 9.74329 35.3345C8.90808 35.1683 8.09364 35.6711 7.92253 36.4512L6.41419 43.2331C6.17982 44.2821 6.6005 45.3402 7.50435 45.9927C8.41165 46.6447 9.6039 46.7532 10.6287 46.2744L18.6539 42.4355L26.681 46.1982C27.104 46.4731 27.5558 46.5722 28.0077 46.5722C28.6445 46.5722 29.2728 46.3765 29.8044 45.9949C30.7086 45.3415 31.1291 44.2843 30.8945 43.2335L29.392 36.4512Z" fill="currentColor" />
+                </svg>
+                </div>
+                <div>
+                <h3 class="text-4xl text-gray-700 font-bold mb-2 dark:text-gray-300"> 20+ </h3>
+                <p class="text-gray-500 dark:text-gray-400">Internationals Awards</p>
+                </div>
+            </div>
+            <div class="flex items-center mb-4">
+                <div class="bg-gray-100 p-8 rounded-lg mr-4">
+                <svg class="w-10 h-auto flex-shrink-0 text-gray-500" width="47" height="35" viewBox="0 0 47 35" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                    <path d="M44.0087 5.14005C42.5931 5.14005 41.4451 6.24704 41.4451 7.61205C41.4451 8.19598 41.6861 8.70977 42.0372 9.1331L33.6656 15.5897C33.1885 15.9577 32.625 16.1319 32.0682 16.1319C31.1381 16.1319 30.2272 15.6455 29.7706 14.7645L24.6378 4.85654C25.471 4.4502 26.0638 3.63444 26.0638 2.66805C26.0638 1.30304 24.9158 0.196045 23.5002 0.196045C22.0847 0.196045 20.9367 1.30304 20.9367 2.66805C20.9367 3.63444 21.5268 4.4502 22.365 4.85654L17.2275 14.7654C16.7709 15.5765 15.8576 16.1327 14.9283 16.1327C14.372 16.1327 13.8084 15.9585 13.3309 15.5905L4.96331 9.13387C5.3142 8.709 5.55533 8.19915 5.55533 7.61205C5.55533 6.24704 4.40734 5.14005 2.99178 5.14005C1.57621 5.14005 0.428223 6.24472 0.428223 7.61205C0.428223 8.97705 1.57621 10.084 2.99178 10.084C3.1512 10.084 3.28987 10.0234 3.44128 9.99652L7.35311 30.7459C7.79684 33.0968 9.92139 34.804 12.3968 34.804H34.6036C37.0815 34.804 39.2044 33.0953 39.6482 30.7446L43.56 9.99521C43.7123 10.0222 43.8484 10.084 44.0087 10.084C45.4242 10.084 46.5722 8.97705 46.5722 7.61205C46.5722 6.24472 45.4266 5.14005 44.0087 5.14005ZM37.1271 30.3004C36.9028 31.4746 35.8453 32.332 34.6036 32.332H12.3968C11.1575 32.332 10.0968 31.4784 9.87492 30.3019L6.73938 13.6684L11.7319 17.5201C12.638 18.2192 13.7739 18.6039 14.9307 18.6039C16.8879 18.6039 18.6471 17.5564 19.5211 15.8701L23.5002 8.19915L27.4793 15.8739C28.3534 17.5603 30.1126 18.6078 32.0697 18.6078C33.2265 18.6078 34.3625 18.2228 35.2685 17.524L40.2611 13.6723L37.1271 30.3004Z" fill="currentColor" />
+                </svg>
+                </div>
+                <div>
+                <h3 class="text-4xl text-gray-700 font-bold mb-2 dark:text-gray-300"> 10K+ </h3>
+                <p class="text-gray-500 dark:text-gray-400">Listing</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+        <!-- end::dashboard  -->
+        <!-- end content -->
+        <!-- start::footer  -->
+        {% include 'home/partials/_footer.html' %}
+        <!-- end::footer  -->
+
+        <!-- start::scroll-top-btn  -->
+        {% include 'home/partials/_scrool_btn.html' %}
+        <!-- end::scroll-top-btn  -->
+    </div>
+
+{% endblock content %}
+    

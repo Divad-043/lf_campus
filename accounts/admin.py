@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AdminUser
-from .models import User
+from .models import User, Visitor
 
 
 @admin.register(User)
@@ -34,3 +34,8 @@ class User(AdminUser):
     ),
     ordering = ("email",)
     # add_form = AdminAddForm
+
+
+@admin.register(Visitor)
+class VisitorAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Visitor._meta.get_fields()]

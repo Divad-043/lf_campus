@@ -1,0 +1,569 @@
+{% load static %}
+<div class="mobile-navbar overflow-y-auto fixed bg-white dark:bg-background -left-full top-0 h-full w-full transition-all z-[100]">
+    <div class="flex justify-end py-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-4 text-gray-500 close-navbar-btn" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <ul class="mx-5">
+      <li class="">
+        <div class="dropdown dropdown-mobile dark:bg-foreground rounded-lg" data-dropdown>
+          <button class="link w-full py-3 flex dark:border-gray-800 pb-5 justify-between items-center border-b border-gray-200 font-normal text-gray-500 dark:text-gray-200" data-dropdown-button> Home <svg class="w-3 h-auto ml-2 transition-all" width="10" height="6" data-dropdown-button viewBox="0 0 10 6" fill="none" xmlns="../www.w3.org/2000/svg.html">
+              <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74712 0.525274 9.25335 0.525274 9.56583 0.826613C9.87831 1.12795 9.87831 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" fill="currentColor" />
+            </svg>
+          </button>
+          <div class="dropdown-mobile-menu dark:bg-foreground dark:text-gray-300 text-gray-700">
+            <ul class="h-full relative dark:text-gray-300 text-gray-700">
+              <li class="flex">
+                <a href="landing-page-1.html" class="link px-3 py-2 border-b text-sm border-grey-200 dark:border-gray-800 w-full">
+                  <h6 class="font-medium text-gray-600 dark:text-gray-200"> Landing page </h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400 text-xs"> Area Listing page & Inner Pages </p>
+                </a>
+              </li>
+              <li class="flex">
+                <a href="landing-page-2.html" class="link px-3 py-2 border-b text-sm border-grey-200 dark:border-gray-800 w-full">
+                  <h6 class="font-medium text-gray-600 dark:text-gray-200"> Property listing </h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400 text-xs"> Property listing & Inner Pages </p>
+                </a>
+              </li>
+              <li class="flex">
+                <a href="landing-page-3.html" class="link px-3 py-2 border-b text-sm border-grey-200 dark:border-gray-800 w-full">
+                  <h6 class="font-medium text-gray-600 dark:text-gray-200"> Apartment listing </h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400 text-xs"> Apartment listing & Inner Pages </p>
+                </a>
+              </li>
+              <li class="flex">
+                <a href="landing-page-4.html" class="link px-3 py-2 border-b text-sm border-grey-200 dark:border-gray-800 w-full">
+                  <h6 class="font-medium text-gray-600 dark:text-gray-200"> Hotel listing </h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400 text-xs"> Hotel listing & Inner Pages </p>
+                </a>
+              </li>
+              <li class="flex">
+                <a href="landing-page-5.html" class="link px-3 py-2 border-b text-sm border-grey-200 dark:border-gray-800 w-full">
+                  <h6 class="font-medium text-gray-600 dark:text-gray-200"> Shop listing </h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400 text-xs"> Shop listing & Inner Pages </p>
+                </a>
+              </li>
+              <li class="flex">
+                <a href="landing-page-6.html" class="link px-3 py-2 border-b text-sm border-grey-200 dark:border-gray-800 w-full">
+                  <h6 class="font-medium text-gray-600 dark:text-gray-200"> Retaurent listing </h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400 text-xs"> Retaurent listing & Inner Pages </p>
+                </a>
+              </li>
+              <li class="flex [&>a_h6]:hover:text-blue-500 [&>a:first-child]:hover:bg-blue-50 [&>a:last-child]:hover:block [&>a:last-child]:hover:translate-x-[198px]bg-white">
+                <a href="landing-page-7.html" class="link px-3 py-2 text-sm w-full">
+                  <h6 class="font-medium text-gray-600 dark:text-gray-200"> Event listing </h6>
+                  <p class="font-normal text-gray-500 dark:text-gray-400 text-xs"> Event listing & Inner Pages </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="">
+        <div class="dropdown dropdown-mobile dark:bg-foreground rounded-lg" data-dropdown>
+          <button class="link w-full py-3 flex dark:border-gray-800 justify-between pb-5 items-center border-b border-gray-200 font-normal text-gray-500 dark:text-gray-200" data-dropdown-button> Pages <svg class="w-3 h-auto ml-2 transition-all" width="10" height="6" data-dropdown-button viewBox="0 0 10 6" fill="none" xmlns="../www.w3.org/2000/svg.html">
+              <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74712 0.525274 9.25335 0.525274 9.56583 0.826613C9.87831 1.12795 9.87831 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" fill="currentColor" />
+            </svg>
+          </button>
+          <div class="dropdown-mobile-menu dark:bg-foreground dark:text-gray-300 text-gray-700">
+            <div class="flex flex-wrap max-w-full">
+              <div class="p-4 flex-shrink-0">
+                <div class="mb-7 flex flex-col">
+                  <h5 class="text-sm font-semibold mb-2">Landing Page</h5>
+                  <a href="landing-page-1.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Area Listing page Area Listing page Area Listing page landing Page One Area Listing page</a>
+                  <a href="landing-page-2.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Property listing </a>
+                  <a href="landing-page-3.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Apartment listing </a>
+                  <a href="landing-page-4.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Hotel listing </a>
+                  <a href="landing-page-5.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Shop listing </a>
+                  <a href="landing-page-6.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Retaurent listing </a>
+                  <a href="landing-page-7.html" class="link text-sm hover:text-blue-500 mb-0 truncate w-32">Event listing </a>
+                </div>
+                <div class="mb-7 flex flex-col">
+                  <h5 class="text-sm font-semibold mb-2 truncate w-32">Agent</h5>
+                  <a href="agent-profile.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Agent Profile</a>
+                  <a href="agent-list.html" class="link text-sm hover:text-blue-500 mb-0 truncate w-32">Agent List</a>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="mb-7 flex flex-col">
+                  <h5 class="text-sm font-medium mb-2">Blog</h5>
+                  <a href="blog-details-page.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Blog Details</a>
+                  <a href="blog-list-page.html" class="link text-sm hover:text-blue-500 mb-0 truncate w-32">Blog List </a>
+                </div>
+                <div class="mb-7 flex flex-col">
+                  <h5 class="text-sm font-medium mb-2">Pricing</h5>
+                  <a href="pricing-page-1.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Pricing Page One</a>
+                  <a href="pricing-page-2.html" class="link text-sm hover:text-blue-500 mb-0 truncate w-32">Pricing Page Two</a>
+                </div>
+                <div class="mb-7 flex flex-col">
+                  <h5 class="text-sm font-medium mb-2">Event</h5>
+                  <a href="event-listing-details-page.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Event Listing Page</a>
+                  <a href="apartment-details-page.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Apartment Details Page</a>
+                  <a href="resturant-details-page.html" class="link text-sm hover:text-blue-500 mb-0 truncate w-32">Restaurent Details Page </a>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="mb-7 flex flex-col">
+                  <h5 class="text-sm font-medium mb-2">Listing</h5>
+                  <a href="listing-list.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Listing Filter</a>
+                  <a href="listing-grid.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Listing Grid </a>
+                  <a href="listing-map-grid-view.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Listing Map Grid View </a>
+                  <a href="listing-map-list-view.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Listing Map List View </a>
+                  <a href="listing-map-half-grid-view.html" class="link text-sm hover:text-blue-500 mb-0 truncate w-32">Listing Map Half Grid View </a>
+                </div>
+                <div class="mb-7 flex flex-col">
+                  <h5 class="text-sm font-medium mb-2">Others</h5>
+                  <a href="bookin-page.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Booking Page</a>
+                  <a href="contact-page.html" class="link text-sm hover:text-blue-500 mb-0 truncate w-32">Contact Page </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="">
+        <div class="dropdown dropdown-mobile dark:bg-foreground rounded-lg" data-dropdown>
+          <button class="link w-full py-3 flex dark:border-gray-800 pb-5 justify-between items-center border-b border-gray-200 font-normal text-gray-500 dark:text-gray-200" data-dropdown-button> Dashboard <svg class="w-3 h-auto ml-2 transition-all" width="10" height="6" data-dropdown-button viewBox="0 0 10 6" fill="none" xmlns="../www.w3.org/2000/svg.html">
+              <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74712 0.525274 9.25335 0.525274 9.56583 0.826613C9.87831 1.12795 9.87831 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" fill="currentColor" />
+            </svg>
+          </button>
+          <div class="dropdown-mobile-menu dark:bg-foreground dark:text-gray-300 text-gray-700">
+            <div class="dropdown-links">
+              <ul class="p-4">
+                <li class="">
+                  <a href="dashboard-home.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3"> Overview</a>
+                </li>
+                <li>
+                  <a href="dashboard-addlisting.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Add Listing One</a>
+                </li>
+                <li>
+                  <a href="dashboard-addlisting-2.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Add Listing Two</a>
+                </li>
+                <li>
+                  <a href="dashboard-booking.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Booking</a>
+                </li>
+                <li>
+                  <a href="dashboard-bookmarks.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Bookmarks</a>
+                </li>
+                <li>
+                  <a href="dashboard-bookmarks.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Messages</a>
+                </li>
+                <li>
+                  <a href="dashboard-mylisting.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Mylisting</a>
+                </li>
+                <li>
+                  <a href="dashboard-myprofile.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">My Profile</a>
+                </li>
+                <li>
+                  <a href="dashboard-reviews.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-0">Reviews</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <header class="w-full navbar h-20 flex items-center sticky-header z-50 relative dark:bg-background dark:text-gray-100 transition-all">
+    <nav class="container mx-auto flex items-center justify-between lg:px-5 px-5">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 lg:hidden block menu-btn" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <div>
+        <a href="{% url 'core:index' %}" class="flex items-center">
+          <img class="w-11 h-11 mr-3" src="{% static 'home/assets/img/icon.png' %}" alt="" />
+          <h6 class="text-base font-medium">CLF</h6>
+        </a>
+      </div>
+      <button type="button" class="hover:text-blue-500 flex items-center lg:hidden">
+        <span class="lg:mr-3 mr-0 relative">
+          <img class="w-8 h-8 rounded-full border border-white" src="assets/img/faces/10.jpg" alt="" />
+          <span class="w-2 h-2 bg-green-500 rounded-full border absolute bottom-0 right-0"></span>
+        </span>
+      </button>
+      <div class="hidden lg:flex items-center">
+        <ul class="flex items-center">
+          <li class="">
+            <div class="relative [&>div] [&>div]:hover:visible [&>div]:hover:transition-all [&>div]:hover:pt-3 [&>div]:hover:h-full [&>div]:hover:opacity-100 [&>div]:hover:top-auto [&>div]:hover:z-10 pr-9">
+              <button class="link hover:text-blue-500 flex items-center"> Home <svg data-dropdown-button class="w-3 h-auto ml-2" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                  <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74712 0.525274 9.25335 0.525274 9.56583 0.826613C9.87831 1.12795 9.87831 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="absolute top-9 invisible opacity-0 whitespace-nowrap pt-0">
+                <div class="rounded-lg whitespace-nowrap shadow-front-3 bg-white dark:bg-foreground dark:text-gray-300 text-gray-700 z-50">
+                  <ul x-data="{ pages: [
+                      { 
+                          title: 'Landing page', 
+                          subTitle: 'Area Listing page & Inner Pages', 
+                          url: 'landing-page-1.html', 
+                          image: 'assets/img/landing-page-image/01.png'
+                      },
+                      { 
+                          title: 'Property listing', 
+                          subTitle: 'Property listing & Inner Pages', 
+                          url: 'landing-page-2.html', 
+                          image: 'assets/img/landing-page-image/02.png'
+                      },
+                      { 
+                          title: 'Apartment listing', 
+                          subTitle: 'Apartment listing & Inner Pages', 
+                          url: 'landing-page-3.html', 
+                          image: 'assets/img/landing-page-image/03.png'
+                      },
+                      { 
+                          title: 'Hotel listing', 
+                          subTitle: 'Hotel listing & Inner Pages', 
+                          url: 'landing-page-4.html', 
+                          image: 'assets/img/landing-page-image/04.png'
+                      },
+                      { 
+                          title: 'Shop listing', 
+                          subTitle: 'Shop listing & Inner Pages', 
+                          url: 'landing-page-5.html', 
+                          image: 'assets/img/landing-page-image/05.png'
+                      },
+                      { 
+                          title: 'Resturent listing', 
+                          subTitle: 'Retaurent listing & Inner Pages', 
+                          url: 'landing-page-6.html', 
+                          image: 'assets/img/landing-page-image/06.png'
+                      },
+                      { 
+                          title: 'Event listing', 
+                          subTitle: 'Event listing & Inner Pages', 
+                          url: 'landing-page-7.html', 
+                          image: 'assets/img/landing-page-image/07.png'
+                      },
+                      { 
+                          title: 'Apartment listing 2', 
+                          subTitle: 'Apartment listing 2 & Inner Pages', 
+                          url: 'landing-page-8.html', 
+                          image: 'assets/img/landing-page-image/08.png'
+                      },
+                      { 
+                          title: 'Resturent listing 2', 
+                          subTitle: 'Retaurent listing 2 & Inner Pages', 
+                          url: 'landing-page-9.html', 
+                          image: 'assets/img/landing-page-image/09.png'
+                      },
+                      { 
+                          title: 'Travel Listing', 
+                          subTitle: 'Travel listing & Inner Pages', 
+                          url: 'landing-page-10.html', 
+                          image: 'assets/img/landing-page-image/10.png'
+                      },
+                  ]}" class="h-full rounded-lg relative bg-white dark:bg-foreground dark:text-gray-300 text-gray-700">
+                    <template x-for="page in pages">
+                      <li class="flex rounded-t-lg [&>a_h6]:hover:text-blue-500 [&>a:first-child]:hover:border-blue-200 [&>a:first-child]:hover:rounded-t-lg [&>a:first-child]:hover:bg-blue-50 [&>a:last-child]:hover:block [&>a:last-child]:hover:translate-x-[189px] bg-white dark:bg-foreground">
+                        <a :href="page.url" class="link px-3 py-2 border-b text-sm border-grey-200 dark:border-gray-800 w-full">
+                          <h6 x-text="page.title" class="font-medium text-gray-600 dark:text-gray-200"></h6>
+                          <p x-text="page.subTitle" class="font-normal text-gray-500 dark:text-gray-400 text-xs"></p>
+                        </a>
+                        <a :href="page.url" class="absolute left-0 top-0 translate-x-0 hidden bg-white dark:bg-foreground p-3 shadow-inner rounded-r-lg">
+                          <img class="w-full h-[346px] object-cover shadow-input" :src="page.image" alt="" />
+                        </a>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li clas=""><!--
+  File: mega-menu.html
+  Project: multipurpose-listing-and-directory-template
+  File Created: Wednesday, 24th August 2022 2:52:07 pm
+  Author: Naime Hossain & ui-lib -> https://ui-lib.com/ (support@ui-lib.com)
+  -----
+  Last Modified: Monday, 19th September 2022 2:31:12 pm
+  Modified By: Naime Hossain & ui-lib -> https://ui-lib.com/ (support@ui-lib.com>)
+  -----
+  Copyright 2019 - 2022 ui-lib  , ui-lib  ( https://ui-lib.com/ )
+  -->
+            <div class="dropdown relative [&>div]:hover:visible [&>div]:hover:transition-all [&>div]:hover:pt-3 [&>div]:hover:h-full [&>div]:hover:block [&>div]:hover:opacity-100 [&>div]:hover:top-auto [&>div]:hover:z-10 pr-9">
+              <button class="link hover:text-blue-500 flex items-center"> Pages <svg class="w-3 h-auto ml-2" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                  <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74712 0.525274 9.25335 0.525274 9.56583 0.826613C9.87831 1.12795 9.87831 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="absolute top-9 invisible opacity-0 whitespace-nowrap pt-0">
+                <div class="rounded-lg whitespace-nowrap shadow-front-3 bg-white dark:bg-foreground dark:text-gray-300 text-gray-700">
+                  <div class="flex max-w-full">
+                    <div class="p-6">
+                      <div class="mb-7 flex flex-col">
+                        <img class="shadow-front-2 w-32 mb-3 border-2 rounded-lg border-gray-100" src="assets/img/header-img/landing-page.png" alt="" />
+                        <h5 class="text-sm font-semibold mb-2"> Landing Pages </h5>
+                        <a href="landing-page-1.html" class="link text-sm font-normal hover:text-blue-500 mb-2">Area Listing page</a>
+                        <a href="landing-page-2.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Property listing </a>
+                        <a href="landing-page-3.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Apartment listing </a>
+                        <a href="landing-page-4.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Hotel listing </a>
+                        <a href="landing-page-5.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Shop listing </a>
+                        <a href="landing-page-6.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Retaurent listing </a>
+                        <a href="landing-page-7.html" class="link text-sm hover:text-blue-500 mb-0 truncate">Event listing </a>
+                      </div>
+                      <div class="mb-7 flex flex-col">
+                        <img class="shadow-front-2 mb-3 border-2 rounded-lg border-gray-100" src="assets/img/header-img/agent-pages.png" alt="" />
+                        <h5 class="text-sm font-semibold mb-2 truncate w-32"> Agent Pages </h5>
+                        <a href="agent-profile.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Agent Profile</a>
+                        <a href="agent-list.html" class="link text-sm hover:text-blue-500 mb-0 truncate">Agent List</a>
+                      </div>
+                    </div>
+                    <div class="p-6">
+                      <div class="mb-7 flex flex-col">
+                        <img class="shadow-front-2 mb-3 border-2 rounded-lg border-gray-100" src="assets/img/header-img/details-page.png" alt="" />
+                        <h5 class="text-sm font-semibold mb-2">Blog</h5>
+                        <a href="blog-details-page.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Blog Details</a>
+                        <a href="blog-list-page.html" class="link text-sm hover:text-blue-500 mb-0 truncate">Blog List </a>
+                      </div>
+                      <div class="mb-7 flex flex-col">
+                        <img class="shadow-front-2 mb-3 border-2 rounded-lg border-gray-100" src="assets/img/header-img/details-page.png" alt="" />
+                        <h5 class="text-sm font-semibold mb-2">Pricing</h5>
+                        <a href="pricing-page-1.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Pricing V1</a>
+                        <a href="pricing-page-2.html" class="link text-sm hover:text-blue-500 mb-0 truncate">Pricing V2 </a>
+                      </div>
+                      <div class="mb-7 flex flex-col">
+                        <img class="shadow-front-2 w-32 mb-3 border-2 rounded-lg border-gray-100" src="assets/img/header-img/listing-pages.png" alt="" />
+                        <h5 class="text-sm font-semibold mb-2"> Details Pages </h5>
+                        <a href="event-listing-details-page.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Event Details</a>
+                        <a href="apartment-details-page.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Apartment Details </a>
+                        <a href="resturant-details-page.html" class="link text-sm hover:text-blue-500 mb-0 truncate">Restaurent Details </a>
+                      </div>
+                    </div>
+                    <div class="p-6">
+                      <div class="mb-7 flex flex-col">
+                        <img class="shadow-front-2 w-32 mb-3 border-2 rounded-lg border-gray-100" src="assets/img/header-img/listing-pages.png" alt="" />
+                        <h5 class="text-sm font-semibold mb-2">All Listing</h5>
+                        <a href="listing-list.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Listing Filter</a>
+                        <a href="listing-grid.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Listing Grid </a>
+                        <a href="listing-map-grid-view.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Listing Map Grid </a>
+                        <a href="listing-map-list-view.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Listing Map List </a>
+                        <a href="half-map-filter-and-grid-view.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate">Half Map Filter </a>
+                        <a href="listing-map-half-grid-view.html" class="link text-sm hover:text-blue-500 mb-2 truncate"> Map Grid View </a>
+                        <a href="listing-map-half-list-view.html" class="link text-sm hover:text-blue-500 mb-0 truncate"> Map Half List View </a>
+                      </div>
+                      <div class="mb-7 flex flex-col">
+                        <img class="shadow-front-2 w-32 mb-3 border-2 rounded-lg border-gray-100" src="assets/img/header-img/other-pages.png" alt="" />
+                        <h5 class="text-sm font-semibold mb-2">Others</h5>
+                        <a href="bookin-page.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Booking Page</a>
+                        <a href="contact-page.html" class="link text-sm hover:text-blue-500 truncate w-32 mb-2">Contact Page </a>
+                        <a href="sign-in.html" class="link text-sm font-normal hover:text-blue-500 mb-2 truncate w-32">Sign In</a>
+                        <a href="sign-up.html" class="link text-sm hover:text-blue-500 mb-0 truncate w-32">Sign Up </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class=""><!--
+  File: dashboard.html
+  Project: multipurpose-listing-and-directory-template
+  File Created: Wednesday, 10th August 2022 12:52:48 pm
+  Author: Naime Hossain & ui-lib -> https://ui-lib.com/ (support@ui-lib.com)
+  -----
+  Last Modified: Wednesday, 28th September 2022 11:57:58 am
+  Modified By: Naime Hossain & ui-lib -> https://ui-lib.com/ (support@ui-lib.com>)
+  -----
+  Copyright 2019 - 2022 ui-lib  , ui-lib  ( https://ui-lib.com/ )
+  -->
+            <div class="relative [&>div]:hover:visible [&>div]:hover:pt-3 [&>div]:hover:h-full [&>div]:hover:opacity-100 [&>div]:hover:top-auto [&>div]:hover:transition-all [&>div]:hover:z-10 pr-9">
+              <button class="link hover:text-blue-500 flex items-center"> Dashboards <svg class="w-3 h-auto ml-2" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                  <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74712 0.525274 9.25335 0.525274 9.56583 0.826613C9.87831 1.12795 9.87831 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="absolute top-9 invisible opacity-0 whitespace-nowrap pt-0">
+                <div class="max-w-sm shadow-front-3 rounded-lg whitespace-nowrap bg-white dark:bg-foreground dark:text-gray-300 text-gray-700">
+                  <div class="dropdown-links">
+                    <ul class="p-4">
+                      <li class="">
+                        <a href="dashboard-home.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3"> Overview</a>
+                      </li>
+                      <li>
+                        <a href="dashboard-addlisting.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Add Listing One</a>
+                      </li>
+                      <li>
+                        <a href="dashboard-addlisting-2.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Add Listing Two</a>
+                      </li>
+                      <li>
+                        <a href="dashboard-booking.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Booking</a>
+                      </li>
+                      <li>
+                        <a href="dashboard-bookmarks.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Bookmarks</a>
+                      </li>
+                      <li>
+                        <a href="dashboard-bookmarks.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Messages</a>
+                      </li>
+                      <li>
+                        <a href="dashboard-mylisting.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">Mylisting</a>
+                      </li>
+                      <li>
+                        <a href="dashboard-myprofile.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-3">My Profile</a>
+                      </li>
+                      <li>
+                        <a href="dashboard-reviews.html" class="hover:text-blue-500 text-sm block dark:hover:text-blue-500 pb-0">Reviews</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="">
+            <!--
+                      File: nested-list-dropdown.html
+                      Project: multipurpose-listing-and-directory-template
+                      File Created: Wednesday, 10th August 2022 12:52:48 pm
+                      Author: Naime Hossain & ui-lib -> https://ui-lib.com/ (support@ui-lib.com)
+                      -----
+                      Last Modified: Monday, 19th September 2022 12:50:54 pm
+                      Modified By: Naime Hossain & ui-lib -> https://ui-lib.com/ (support@ui-lib.com>)
+                      -----
+                      Copyright 2019 - 2022 ui-lib  , ui-lib  ( https://ui-lib.com/ )
+                      -->
+            <div class="relative [&>div]:hover:visible [&>div]:hover:transition-all [&>div]:hover:pt-3 [&>div]:hover:h-full [&>div]:hover:opacity-100 [&>div]:hover:top-auto [&>div]:hover:z-10 pr-9">
+              <button class="link hover:text-blue-500 flex items-center"> Dropdown <svg class="w-3 h-auto ml-2" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                  <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74712 0.525274 9.25335 0.525274 9.56583 0.826613C9.87831 1.12795 9.87831 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="absolute top-9 invisible opacity-0 whitespace-nowrap pt-0">
+                <div class="max-w-sm shadow-front-3 rounded-lg whitespace-nowrap bg-white dark:bg-foreground dark:text-gray-300 text-gray-700">
+                  <div class="dropdown-links">
+                    <ul class="">
+                      <li class="[&>ul]:hover:block relative pt-3">
+                        <a href="landing-page-1.html" class="link hover:text-blue-500 text-sm flex justify-between px-3 pb-3 items-center">Shop User Account <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-3" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                          </svg></a>
+                        <ul class="max-w-xs w-36 bg-white rounded-lg shadow-inner dark:bg-foreground hidden absolute right-0 top-0 translate-x-full">
+                          <li class="[&>ul]:hover:block relative pt-3">
+                            <a href="#" class="hover:text-blue-500 text-sm flex px-3 pb-3 justify-between items-center whitespace-normal"> Order History <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                              </svg>
+                            </a>
+                            <ul class="max-w-xs w-36 rounded-lg bg-white shadow-inner dark:bg-foreground hidden absolute right-0 top-0 translate-x-full">
+                              <li class="pt-3">
+                                <a href="#" class="hover:text-blue-500 dark:hover:text-blue-500 text-sm block px-3 pb-3">Order History 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover:text-blue-500">Order History 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover:text-blue-500">Order History 2</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover:text-blue-500">sub menu 2</a>
+                          </li>
+                          <li>
+                            <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover:text-blue-500">sub menu 3</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="[&>ul]:hover:block relative">
+                        <a href="landing-page-1.html" class="link hover:text-blue-500 text-sm flex justify-between px-3 pb-3 items-center">
+                          <div class="flex-1 flex">NFT Market</div>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                          </svg>
+                        </a>
+                        <ul class="max-w-xs w-36 bg-white shadow-inner rounded-lg dark:bg-foreground hidden absolute right-0 top-0 translate-x-full">
+                          <li class="[&>ul]:hover:block relative pt-3">
+                            <a href="#" class="hover:text-blue-500 text-sm flex px-3 pb-3 justify-between items-center whitespace-normal"> Order History <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                              </svg>
+                            </a>
+                            <ul class="max-w-xs w-36 rounded-lg bg-white shadow-inner dark:bg-foreground hidden absolute right-0 top-0 translate-x-full">
+                              <li class="pt-3">
+                                <a href="#" class="hover:text-blue-500 dark:hover-text-blue-500 text-sm block px-3 pb-3">Order History 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover-text-blue-500">Order History 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover-text-blue-500">Order History 2</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover-text-blue-500">sub menu 2</a>
+                          </li>
+                          <li>
+                            <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover-text-blue-500">sub menu 3</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover:text-blue-500">Property listing </a>
+                      </li>
+                      <li>
+                        <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover:text-blue-500">Apartment listing </a>
+                      </li>
+                      <li>
+                        <a href="#" class="hover:text-blue-500 text-sm block px-3 pb-3 dark:hover:text-blue-500">Hotel listing </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="mr-9">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300 cursor-pointer darkMode" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 cursor-pointer lightMode hidden" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+            </svg>
+          </li>
+          <li class="mr-9">
+            <div class="dropdown" data-dropdown>
+              <button class="link hover:text-blue-500 flex items-center" data-dropdown-button>
+                <span class="lg:mr-3 mr-0 relative">
+                  <img class="w-8 h-8 rounded-full border border-white" src="{% static 'home/assets/img/faces/10.jpg' %}" data-dropdown-button alt="" />
+                  <span class="w-2 h-2 bg-green-500 rounded-full border absolute bottom-0 right-0"></span>
+                </span> My Account <svg class="w-3 h-auto ml-2" width="10" height="6" data-dropdown-button viewBox="0 0 10 6" fill="none" xmlns="../www.w3.org/2000/svg.html">
+                  <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74712 0.525274 9.25335 0.525274 9.56583 0.826613C9.87831 1.12795 9.87831 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="dropdown-menu bg-white dark:bg-foreground dark:text-gray-300 text-gray-700">
+                <div>
+                  <div class="dropdown-links max-w-xs w-48 rounded-md py-3">
+                    <a href="listing-list.html" class="link hover:text-blue-500 px-4 py-1 flex items-center text-sm text-gray-700 dark:text-gray-300"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>Account </a>
+                    <a href="listing-list.html" class="link hover:text-blue-500 px-4 py-1 flex items-center text-sm text-gray-700 dark:text-gray-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg> Order Tracking </a>
+                    <a href="listing-list.html" class="link hover:text-blue-500 px-4 py-1 flex items-center text-sm text-gray-700 dark:text-gray-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                      </svg> My Voucher </a>
+                    <a href="listing-list.html" class="link hover:text-blue-500 px-4 py-1 flex items-center text-sm text-gray-700 dark:text-gray-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg> My Wishlist </a>
+                    <a href="listing-list.html" class="link hover:text-blue-500 px-4 py-1 flex items-center text-sm text-gray-700 dark:text-gray-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                      </svg> Settings </a>
+                    <a href="listing-list.html" class="link hover:text-blue-500 px-4 py-1 flex items-center text-sm text-gray-700 dark:text-gray-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                      </svg> Sign Out </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button type="button" class="inline-flex items-center px-3 py-[9px] rounded-lg border border-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 xl:mr-2 mr-0" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+          </svg>
+          <a href="{% url 'core:item_create' %}"><span class="xl:block hidden">Add Item</span></a>
+        </button>
+      </div>
+    </nav>
+  </header>

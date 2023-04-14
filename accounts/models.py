@@ -54,7 +54,6 @@ class User(AbstractUser):
     username = None
     current_city = models.CharField(max_length=20, blank=True, null=True)
     objects = UserManager()
-    is_visitor = models.BooleanField(default=False, blank=True, null=True)
 
     REQUIRED_FIELDS = ['first_name', 'last_name', 'phone', 'current_city']
     USERNAME_FIELD = 'email'
@@ -63,3 +62,8 @@ class User(AbstractUser):
         return self.get_full_name()
 
 
+class Visitor(models.Model):
+    first_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=9)
+    email = models.EmailField()

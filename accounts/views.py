@@ -10,6 +10,7 @@ from django.contrib.auth.views import LoginView
 class UserLoginView(LoginView):
     redirect_authenticated_user = True
     authentication_form = LoginForm
+    template_name = 'registration/new_login.html'
 
 
 class RegisterView(CreateView):

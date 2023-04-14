@@ -1,9 +1,10 @@
+{% load static %}
 <!-- Addvanced search tab start -->
 
 <div class="container mt-[80px] md:mt-[120px] lg:mt-[0px] z-[2] pl-[60px] lg:pl-[50px] 2xl::pl-[0px] lg:absolute lg:left-0 lg:right-0 lg:top-[100%] lg:translate-y-[-396px]">
     <div class="grid grid-cols-12">
         <div class="col-span-12">
-            <div class="relative text-center">
+            <!-- <div class="relative text-center">
                 <ul class="tab-nav search-tab inline-flex px-[15px] sm:px-[30px] py-[22px] border-t border-l border-r border-solid border-[#016450] rounded-tl-[15px] rounded-tr-[15px] bg-[rgb(232,241,255,0.9)]">
                     <li data-tab="buy" class="mr-[5px] sm:mr-[10px] md:mr-[46px] my-1 active"><button class="font-lora leading-none px-[5px] sm:px-[10px] capitalize text-primary transition-all text-base xl:text-[22px] before:absolute before:left-auto before:right-0 before:bottom-[-34px] before:z-10 before:rounded-full before:w-0 before:h-[3px] before:content-[''] before:bg-secondary relative before:transition-all ease-out">buy</button>
                     </li>
@@ -15,7 +16,7 @@
                     </li>
                 </ul>
 
-            </div>
+            </div> -->
             <div class="relative selectricc-border-none">
 
                 <button class="tab-toggle-btn px-[10px] py-[15px] absolute top-[0px] left-[-45px] border-l border-t border-b border-solid border-[#fff] bg-[rgb(232,241,255,0.98)] text-primary rounded-tl-[10px] rounded-bl-[10px]" aria-label="svg icon">
@@ -41,17 +42,17 @@
                                     <img src="assets/images/icon/location.svg" width="24" height="24" alt="svg icon">
                                 </div>
                                 <div class="flex-1">
-                                    <label for="location" class="font-lora block capitalize text-primary text-[17px] xl:text-[23px] leading-none mb-1">Location</label>
+                                    <label for="location" class="font-lora block capitalize text-primary text-[17px] xl:text-[23px] leading-none mb-1">Lost Location</label>
                                     <input id="location" type="text" placeholder="Choose location" class="text-tiny placeholder:text-body leading-none font-light pr-3 focus:outline-none w-full bg-transparent">
                                 </div>
                             </div>
 
                             <div class="advanced-searrch-list flex lg:border-r lg:border-primary lg:mr-[40px] xl:mr-[50px] last:mr-0 last:border-r-0 mb-[45px]">
                                 <div class="mr-4 self-start shrink-0">
-                                    <img src="assets/images/icon/property.svg" width="24" height="24" alt="svg icon">
+                                    <img src="{% static 'main/assets/images/icon/property.svg' %}" width="24" height="24" alt="svg icon">
                                 </div>
                                 <div class="flex-1">
-                                    <label for="property" class="font-lora block capitalize text-primary text-[17px] xl:text-[23px] leading-none mb-1">Property
+                                    <label for="property" class="font-lora block capitalize text-primary text-[17px] xl:text-[23px] leading-none mb-1">Item
                                         Type</label>
                                     <select name="property" id="property" class="nice-select appearance-none bg-transparent text-tiny font-light cursor-pointer">
                                         <option selected value="0">Apartments</option>
@@ -62,7 +63,7 @@
                                 </div>
                             </div>
 
-                            <div class="advanced-searrch-list flex lg:border-r lg:border-primary lg:mr-[40px] xl:mr-[50px] last:mr-0 last:border-r-0 mb-[45px]">
+                            <!-- <div class="advanced-searrch-list flex lg:border-r lg:border-primary lg:mr-[40px] xl:mr-[50px] last:mr-0 last:border-r-0 mb-[45px]">
                                 <div class="mr-4 self-start shrink-0">
                                     <img src="assets/images/icon/dollar-circle.svg" width="24" height="24" alt="svg icon">
                                 </div>
@@ -75,25 +76,44 @@
                                         <option value="2">3700 USD</option>
                                         <option value="3">3800 USD</option>
                                     </select>
+                                    <div class="flex-1">
+                                        <label for="location" class="font-lora block capitalize text-primary text-[17px] xl:text-[23px] leading-none mb-1">Lost Location</label>
+                                        <input id="location" type="text" placeholder="Choose location" class="text-tiny placeholder:text-body leading-none font-light pr-3 focus:outline-none w-full bg-transparent">
+                                    </div>
                                 </div>
 
-                            </div>
+                            </div> -->
+
+                            <!-- <div class="advanced-searrch-list flex lg:border-r lg:border-primary lg:mr-[40px] xl:mr-[50px] last:mr-0 last:border-r-0 mb-[45px]">
+                                <div class="mr-4 self-start shrink-0">
+                                    <img src="assets/images/icon/location.svg" width="24" height="24" alt="svg icon">
+                                </div>
+                                <div class="flex-2">
+                                    <label for="location" class="font-lora block capitalize text-primary text-[17px] xl:text-[23px] leading-none mb-1">Enter key word</label>
+                                    <input id="location" type="text" placeholder="Choose location" class="text-tiny placeholder:text-body leading-none font-light pr-3 focus:outline-none w-full bg-transparent">
+                                </div>
+                            </div> -->
 
                             <div class="advanced-searrch-list flex items-center lg:border-r lg:boprimaryborder-primaryD4D4] lg:mr-[40px] xl:mr-[50px] last:mr-0 last:border-r-0 mb-[45px] relative">
 
+                                
                                 <div class="mr-4 self-start shrink-0">
                                     <img src="assets/images/icon/area.svg" width="24" height="24" alt="svg icon">
                                 </div>
 
                                 <div class="flex-1">
-                                    <label for="property-size" class="font-lora block capitalize text-primary text-[17px] xl:text-[23px] leading-none mb-1">Property
+                                    <!-- <label for="property-size" class="font-lora block capitalize text-primary text-[17px] xl:text-[23px] leading-none mb-1">Property
                                         Size</label>
                                     <select name="property-size" id="property-size" class="nice-select appearance-none bg-transparent text-tiny font-light cursor-pointer">
                                         <option selected value="0">1500 Sqft</option>
                                         <option value="1">1600 Sqft</option>
                                         <option value="2">1700 Sqft</option>
                                         <option value="3">1800 Sqft</option>
-                                    </select>
+                                    </select> -->
+                                    <div class="flex-2">
+                                        <label for="location" class="font-lora block capitalize text-primary text-[17px] xl:text-[23px] leading-none mb-1">Enter key word</label>
+                                        <input id="location" type="text" placeholder="Choose location" class="text-tiny placeholder:text-body leading-none font-light pr-3 focus:outline-none w-full bg-transparent">
+                                    </div>
                                 </div>
                                 <button class="search-btn absolute right-0 lg:right-[-60px] xl:right-[-70px]">
                                     <img src="assets/images/icon/search-outline.svg" class="max-w-[30px] xl:w-auto" width="40" height="40" alt="svg icon">

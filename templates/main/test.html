@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'leaflet/leaflet.css' %}">
+    <script src="{% static 'leaflet/leaflet.js' %}"></script>
+</head>
+<body>
+    <div id="map" style="height: 800px;" class="w-full"></div>
+    <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=yaounde&amp;layer=mapnik&amp;marker=yaounde"></iframe>
+    <script src="{% static 'main/assets/js/script.js' %}"></script>
+</body>
+</html>
