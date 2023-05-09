@@ -1,0 +1,13 @@
+{#{% if form.errors %}#}
+{#    {% for error in form.errors %}#}
+{#        <p>{{ error }}</p>#}
+{#    {% endfor %}#}
+{##}
+{#{% endif %}#}
+
+{#{% for field in form %}#}
+{#                    {% if field.errors %}#}
+{#                    <span class="text-danger">{{ field.errors }}</span>#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+<p>{{ form.errors }}</p>

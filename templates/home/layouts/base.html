@@ -17,9 +17,35 @@
     <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/plugin-css/preloader.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/main.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/custom.css' %}" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}"></script>
+
+    <style>
+
+        #marker, .marker {
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+
+    {% block others_styles %}
+
+    {% endblock %}
 </head>
 
 <body class="relative">
+
+    <style>
+        .mapboxgl-popup {
+            max-width: 400px;
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            }
+    </style>
+
     <main>
         
         {% block loader %}
@@ -40,7 +66,12 @@
         <script src="{% static 'home/assets/js/others/plugins-script/testimonial/testimonial.js' %}"></script>
         <script src="{% static 'home/assets/js/others/plugins-core/alpine.min.js' %}"></script>
         <script src="{% static 'home/assets/js/main.js' %}"></script>
+
     {% endblock scripts %}
+
+    {% block others_scripts %}
+
+    {% endblock %}
         
     
 </body>

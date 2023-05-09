@@ -21,7 +21,7 @@ class User(AdminUser):
                 ),
             },
         ),
-        (("Important dates"), {"fields": ("last_login", "date_joined")}),
+        ("Important dates", {"fields": ("last_login", "date_joined")}),
     )
     add_fieldsets = (
         (
@@ -38,4 +38,5 @@ class User(AdminUser):
 
 @admin.register(Visitor)
 class VisitorAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Visitor._meta.get_fields()]
+    # list_display = [field.name for field in Visitor._meta.get_fields()]
+    list_display = ['first_name', 'last_name', 'phone', 'email']

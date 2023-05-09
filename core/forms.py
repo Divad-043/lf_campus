@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.gis import forms as lforms
-from .models import Item, ItemCategory, ItemQuestion, Reclamation, DepositPoint, DepositPointAdministration, ItemDeposit
+from .models import Item, ItemCategory, ItemQuestion, DepositPoint, DepositPointAdministration, ItemDeposit
 from accounts.models import User
 
 
@@ -16,7 +16,7 @@ from accounts.models import User
 class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
-        fields = '__all__'
+        fields = ['found_date', 'found_location_name', 'description', 'first_image', 'second_image']
 
 
 class ItemCategoryForm(forms.ModelForm):
@@ -31,10 +31,10 @@ class ItemQuestionForm(forms.ModelForm):
         fields = ['question', 'is_for_reclamation']
 
 
-class ReclamationForm(forms.ModelForm):
-    class Meta:
-        model = Reclamation
-        fields = ['user', 'item', 'question', 'response']
+# class ReclamationForm(forms.ModelForm):
+#     class Meta:
+#         model = Reclamation
+#         fields = ['user', 'item', 'question', 'response']
 
 
 class DepositPointForm(forms.ModelForm):

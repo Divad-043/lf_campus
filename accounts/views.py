@@ -1,6 +1,4 @@
-from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView
-from .models import User
 from .forms import RegistrationForm, UserForm, LoginForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin

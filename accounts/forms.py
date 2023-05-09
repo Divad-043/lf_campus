@@ -1,10 +1,7 @@
 from django import forms
+from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
-from django.contrib.auth import authenticate, get_user_model, password_validation
-from .models import User
-from django.core.exceptions import ObjectDoesNotExist, ValidationError
-
 
 
 class RegistrationForm(UserCreationForm):
@@ -81,5 +78,3 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = get_user_model()
         fields = ['first_name', 'last_name', 'email', 'phone', 'current_city']
-
-

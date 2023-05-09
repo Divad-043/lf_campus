@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    depends_on:
+      - mysql
+    environment:
+      DATABASE_URL: mysql://localhost:3306/clf
+      USER: root
+      PASSWORD:
+    ports:
+      - "3306:3306"
+
+  mysql:
+    image: mysql:alpine
+    volumes:
+      - data:/var/lib/mysql/data
+
+volumes:
+  data:

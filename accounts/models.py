@@ -1,26 +1,17 @@
-from django.db import models
 from django.apps import apps
-from django.utils import timezone
-from django.core.mail import send_mail
-from django.contrib.auth.validators import UnicodeUsernameValidator
-from django.contrib.auth.models import AbstractUser, PermissionsMixin
-from django.contrib.auth.hashers import make_password
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import AbstractUser, PermissionsMixin
+from django.db import models
 
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def _create_user(self, email, password, **extra_fields):
-        """
-        Create and save a user with the given username, email, and password.
-        """
         if not email:
             raise ValueError("The given email must be set")
         email = self.normalize_email(email)
-        # Lookup the real model class from the global app registry so this
-        # manager method can be used in migrations. This is fine because
-        # managers are by definition working on the real model.
         GlobalUserModel = apps.get_model(
             self.model._meta.app_label, self.model._meta.object_name
         )
@@ -47,14 +38,12 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, **extra_fields)
 
 
-
 class User(AbstractUser):
     phone = models.CharField(max_length=9)
     email = models.EmailField(unique=True)
     username = None
     current_city = models.CharField(max_length=20, blank=True, null=True)
     objects = UserManager()
-
     REQUIRED_FIELDS = ['first_name', 'last_name', 'phone', 'current_city']
     USERNAME_FIELD = 'email'
 
