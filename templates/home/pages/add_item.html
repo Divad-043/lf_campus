@@ -14,7 +14,7 @@
           <div class="relative">
             <img class="w-full object-cover h-52" src="{% static 'home/assets/img/lost.png' %}" alt="" />
             <div class="absolute top-1/2 w-full -translate-y-1/2 text-center mb-4">
-              <h1 class="capitalize text-4xl text-white font-semibold"> Add an item / {{ item_type }} </h1>
+              <h1 class="capitalize text-4xl text-white font-semibold"> Add an item </h1>
               <p class="text-white">Add the found item</p>
             </div>
           </div>
@@ -24,7 +24,7 @@
             <div class="flex mb-12">
               <ul class="flex items-center text-gray-500 dark:text-gray-400">
                 <li>
-                  <a href="#" class="font-medium text-gray-700 dark:text-gray-100 mr-1"> Home </a>`
+                  <a href="#" class="font-medium text-gray-700 dark:text-gray-100 mr-1"> Home </a>
                 </li>
                 <li>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-4 w-4 mr-1">
@@ -32,7 +32,7 @@
                   </svg>
                 </li>
                 <li>
-                  <a href="#" class="font-medium text-gray-700 dark:text-gray-100 mr-1"> Add Item </a>
+                  <a href="#" class="font-medium text-gray-700 dark:text-gray-100 mr-1"> Pages </a>
                 </li>
                 <li>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-4 w-4 mr-1">
@@ -40,75 +40,64 @@
                   </svg>
                 </li>
                 <li>
-                  <a href="#" class="text-gray-400 dark:text-gray-400 font-medium"> {{ item_type }} </a>
+                  <a href="#" class="text-gray-400 dark:text-gray-400 font-medium"> Booking </a>
                 </li>
               </ul>
             </div>
             <div class="grid grid-cols-3 gap-7 pb-10">
-                {% include "home/partials/_messages.html" %}
-                {% include "home/partials/_form_errors.html" %}
-                <!-- Personal Details section -->
-              <h4 class="text-gray-700 dark:text-gray-200 text-2xl font-medium col-span-3 mb-6"> Personal/Item Informations </h4>
+              <!-- Personal Details section -->
+              <h4 class="text-gray-700 dark:text-gray-200 text-2xl font-medium col-span-3 mb-6"> Personal Details </h4>
               <div class="lg:col-span-2 col-span-3">
-              <form method="post" action="{% url 'core:item_create' item_type_slug %}" enctype="multipart/form-data">
-                {% csrf_token %}
                 <div class="grid lg:grid-cols-2 gap-7 mb-7">
-
-                    {% if not request.user.is_authenticated %}
-                        <input type="text" name="first_name" class="w-full py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="First Name" />
-                        <input type="text" name="last_name" class="w-full py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="Last Name" />
-                        <input type="email" name="email" class="w-full py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="Email" />
-                        <input type="text" name="phone" class="w-full py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="Phone" />
-                    {% endif %}
-{#                  <div class="relative">#}
-{#                    <select name="cars" class="bg-white w-full border border-gray-200 dark:bg-foreground dark:border-foreground relative appearance-none rounded-lg px-4 py-[11px] focus:outline-blue-300 text-gray-400">#}
-{#                      <option value="volvo">Form Time</option>#}
-{#                      <option value="saab">Saab</option>#}
-{#                      <option value="mercedes">Mercedes</option>#}
-{#                      <option value="audi">Audi</option>#}
-{#                    </select>#}
-{#                    <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" class="w-3 h-3 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2" xmlns="../www.w3.org/2000/svg.html">#}
-{#                      <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74713 0.525274 9.25335 0.525274 9.56583 0.826613C9.87832 1.12795 9.87832 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" />#}
-{#                    </svg>#}
-{#                  </div>#}
-{#                  <div class="relative">#}
-{#                    <select name="cars" class="bg-white w-full border border-gray-200 dark:bg-foreground dark:border-foreground relative appearance-none rounded-lg px-4 py-[11px] focus:outline-blue-300 text-gray-400">#}
-{#                      <option value="volvo">Till</option>#}
-{#                      <option value="saab">Saab</option>#}
-{#                      <option value="mercedes">Mercedes</option>#}
-{#                      <option value="audi">Audi</option>#}
-{#                    </select>#}
-{#                    <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" class="w-3 h-3 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2" xmlns="../www.w3.org/2000/svg.html">#}
-{#                      <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74713 0.525274 9.25335 0.525274 9.56583 0.826613C9.87832 1.12795 9.87832 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" />#}
-{#                    </svg>#}
-{#                  </div>#}
-{#                  <textarea class="block col-span-2 py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none w-full border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>#}
-
-                    <input type="text" name="found_location_name" class="block col-span-2 py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none w-full border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="Enter found location" />
-
-{#                    <label for="found_date">Found Date</label>#}
-                    <input type="date" id="found_date" hidden="hidden" name="found_date" class="block col-span-2 py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none w-full border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="Found Date" />
-
-                    {% for question in item_questions %}
-                        <input type="text" name="{{ question.tag }}" class="block col-span-2 py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none w-full border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="{{ question.question }}" />
-                    {% endfor %}
-                    <textarea class="block col-span-2 py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none w-full border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" id="exampleFormControlTextarea1" rows="3" placeholder="Item Description"></textarea>
-
-                    <input type="file" name="first_image" class="block col-span-2 py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none w-full border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="" />
-
-                    <input type="file" name="second_image" class="block col-span-2 py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none w-full border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="" />
-
-                    <div id="map" class="h-96 w-full block col-span-2"></div>
-
-                    <input id="found_location_latitude" name="found_location_latitude" type="text" style="visibility: hidden">
-                    <input id="found_location_longitude" name="found_location_longitude" type="text" style="visibility: hidden">
-
+                  <input type="text" class="w-full py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="First Name" />
+                  <input type="text" class="w-full py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="Last Name" />
+                  <input type="email" class="w-full py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="Email" />
+                  <input type="number" class="w-full py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" placeholder="Phone" />
+                  <div class="relative">
+                    <select name="cars" class="bg-white w-full border border-gray-200 dark:bg-foreground dark:border-foreground relative appearance-none rounded-lg px-4 py-[11px] focus:outline-blue-300 text-gray-400">
+                      <option value="volvo">Form Time</option>
+                      <option value="saab">Saab</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" class="w-3 h-3 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2" xmlns="../www.w3.org/2000/svg.html">
+                      <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74713 0.525274 9.25335 0.525274 9.56583 0.826613C9.87832 1.12795 9.87832 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" />
+                    </svg>
+                  </div>
+                  <div class="relative">
+                    <select name="cars" class="bg-white w-full border border-gray-200 dark:bg-foreground dark:border-foreground relative appearance-none rounded-lg px-4 py-[11px] focus:outline-blue-300 text-gray-400">
+                      <option value="volvo">Till</option>
+                      <option value="saab">Saab</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" class="w-3 h-3 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2" xmlns="../www.w3.org/2000/svg.html">
+                      <path d="M4.99982 6.00001C4.79513 6.00001 4.59034 5.92467 4.43435 5.774L0.434558 1.91686C0.122074 1.61552 0.122074 1.12735 0.434558 0.826011C0.747042 0.524671 1.25327 0.524671 1.56575 0.826011L4.99982 4.13893L8.43464 0.826613C8.74713 0.525274 9.25335 0.525274 9.56583 0.826613C9.87832 1.12795 9.87832 1.61612 9.56583 1.91746L5.56604 5.7746C5.4098 5.92527 5.20481 6.00001 4.99982 6.00001Z" />
+                    </svg>
+                  </div>
+                  <textarea class="block col-span-2 py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none w-full border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800" id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
                 </div>
                 <div class="flex flex-wrap items-center cols-span-2 mb-20">
-                  <button type="submit" class="bg-blue-500 shadow-glow-blue hover:bg-blue-600 rounded-lg px-10 py-[14px] text-white mr-7 mb-5"> Submit </button>
+                  <button type="button" class="bg-blue-500 shadow-glow-blue hover:bg-blue-600 rounded-lg px-10 py-[14px] text-white mr-7 mb-5"> Submit </button>
                   <button type="button" class="border border-gray-200 rounded-lg px-10 py-[13px] text-gray-500 dark:text-gray-300 mr-7 mb-5"> Cancel </button>
                 </div>
-              </form>
+                <!-- <h4 class="text-gray-700 dark:text-gray-200 text-2xl font-medium mb-6"> Payment Methods </h4>
+                <div class="inline-flex flex-wrap items-center mb-6">
+                  <div class="flex items-center mr-7 lg:mb-0 mb-4">
+                    <input checked id="html" type="radio" name="fav_language" value="HTML" class="peer mr-1" />
+                    <label class="font-medium peer-checked:text-blue-500 dark:peer-checked:text-blue-500" for="html"> PayPal </label>
+                  </div>
+                  <div class="flex items-center mr-7 lg:mb-0 mb-4">
+                    <input id="css" type="radio" name="fav_language" value="CSS" class="peer mr-1" />
+                    <label for="css" class="font-medium peer-checked:text-blue-500 dark:peer-checked:text-blue-500"> Credit/Debit Card </label>
+                  </div>
+                </div>
+                <input type="text" class="w-full py-[11px] shadow-input hover:border hover:border-blue-200 focus:border-blue-200 focus:outline-none border border-gray-200 dark:border-foreground dark:bg-foreground dark:text-gray-100 px-4 rounded-lg dark:focus:outline-gray-800 mb-1" placeholder="Enter your email correctly" />
+                <span class="text-xs text-gray-500 dark:text-gray-400 block mb-6">You will enter your email to complete payment.</span>
+                <div class="flex flex-wrap">
+                  <button type="button" class="bg-blue-500 shadow-glow-blue hover:bg-blue-600 rounded-lg px-10 py-[14px] text-white mr-7 mb-5"> Pay Bill </button>
+                  <button type="button" class="border border-gray-200 rounded-lg px-10 py-[13px] text-gray-500 dark:text-gray-300 mr-7 mb-5"> Cancel </button>
+                </div> -->
               </div>
               <!-- Booking summary section -->
               <div class="lg:col-span-1 col-span-3">
@@ -341,127 +330,5 @@
     <script src="{% static 'home/assets/js/others/plugins-core/alpine.min.js' %}"></script>
     <script src="{% static 'home/assets/js/main.js' %}"></script>
 {% endblock scripts %}
-
-{% block others_scripts %}
-    <script>
-            var longitude = 0;
-            var latitude = 0;
-            navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options);
-
-            function successCallback(position) {
-              longitude = position.coords.longitude;
-              latitude = position.coords.latitude;
-              //console.log(longitude);
-              //console.log(latitude);
-              // Ajouter un marqueur à la position actuelle
-            }
-
-            function errorCallback(error) {
-              console.log(error);
-            }
-
-            var options = {
-              enableHighAccuracy: true,
-              timeout: 5000,
-              maximumAge: 0
-            };
-
-
-            mapboxgl.accessToken = 'pk.eyJ1IjoiZGl2YWQ0MyIsImEiOiJjbGdoNm5wNDkwNG9oM3FzdnBoaGlianlwIn0.bqDGiG2wu8cRCNjYAOPS2Q';
-
-           /*const geojson = {
-            'type': 'FeatureCollection',
-            'features': {{ feature_for_map|safe }}
-            };*/
-
-
-            const map = new mapboxgl.Map({
-            container: 'map',
-            // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-            style: 'mapbox://styles/mapbox/satellite-streets-v12',
-            //center: [{{ localisation_response.location.longitude }}, {{ localisation_response.location.latitude }}],
-            //center: [11.49965, 3.85668],
-            //center: [{{ user_longitude }}, {{ user_latitude }}],
-            center: [{{ closest_university.longitude }}, {{ closest_university.latitude }}],
-            zoom: 16.3
-            });
-
-            // Add an item
-            map.on('click', function(e) {
-                var marker = new mapboxgl.Marker()
-                    .setLngLat(e.lngLat)
-                    .addTo(map);
-
-                // Récupération des coordonnées du point
-                var lngLat = marker.getLngLat();
-                var longitude = lngLat.lng;
-                var latitude = lngLat.lat;
-
-                console.log(longitude);
-                console.log(latitude);
-
-                var found_location_latitude = document.querySelector("#found_location_latitude");
-                var found_location_longitude = document.querySelector("#found_location_longitude");
-                found_location_latitude.value = latitude;
-                found_location_longitude.value = longitude;
-
-                console.log(found_location_latitude.value);
-
-                // Envoi des coordonnées à la vue Django pour traitement
-                /*fetch('/enregistrer_objet_trouve/', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        'longitude': longitude,
-                        'latitude': latitude
-                    }),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Affichage des objets trouvés sur la carte
-                    // ...
-                })
-                .catch(error => console.error(error));*/
-
-                });
-
-
-            // Add markers to the map.
-            /*for (const marker of geojson.features) {
-            // Create a DOM element for each marker.
-            const el = document.createElement('div');
-            const width = marker.properties.iconSize[0];
-            const height = marker.properties.iconSize[1];
-            el.className = 'marker';
-             el.style.backgroundImage = `url(${marker.properties.image})`
-            el.style.width = `${width}px`;
-            el.style.height = `${height}px`;
-            el.style.backgroundSize = '100%';
-
-            el.addEventListener('click', (e) => {
-                const coordinates = marker.geometry.coordinates.slice();
-                const description = marker.properties.description;
-            });
-
-            const description = marker.properties.description;
-
-            const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-                description
-            );
-
-            // Add markers to the map.
-            new mapboxgl.Marker(el)
-            .setLngLat(marker.geometry.coordinates)
-                .setPopup(popup)
-            .addTo(map);
-            }*/
-
-            var marker = new mapboxgl.Marker()
-          .setLngLat([user_longitude, user_latitude])
-          .addTo(map);
-
-        </script>
-{% endblock %}
+    
     

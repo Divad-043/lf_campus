@@ -125,7 +125,7 @@
               <div class="flex justify-between flex-wrap">
                 <div class="mb-4">
                   <div class="flex items-center mb-1">
-                    <h4 class="text-gray-700 font-medium dark:text-gray-100 mr-2 lg:text-3xl text-2xl"> {{ item_name.answer }} </h4>
+                    <h4 class="text-gray-700 font-medium dark:text-gray-100 mr-2 lg:text-3xl text-2xl"> Premium Duplex Apartment </h4>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-green-500">
                       <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                     </svg>
@@ -186,7 +186,7 @@
                 <div class="swiper mySwiper2 mb-7">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img class="h-96 w-full object-cover rounded-lg" src="{{ object.first_image.url }}" />
+                      <img class="h-96 w-full object-cover rounded-lg" src="assets/img/Image/resturant/1.jpg" />
                     </div>
                     <div class="swiper-slide">
                       <img class="h-96 w-full object-cover rounded-lg" src="assets/img/Image/resturant/2.jpg" />
@@ -605,30 +605,7 @@
               <div class="rounded-lg shadow-fornt-2 dark:bg-foreground bg-white mb-7">
                 <div class="mapouter">
                   <div class="gmap_canvas">
-{#                    <iframe class="w-full h-64 rounded-t-md" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>#}
-{#                      <iframe class="w-full h-64 rounded-t-md" id="gmap_canvas"#}
-{#                      width="600"#}
-{#                      height="450"#}
-{#                      frameborder="0" style="border:0"#}
-{#                      src="https://api.mapbox.com/styles/v1/divad43/satellite-streets-v12/embed.html?access_token={{ mapbox_access_token }}&center={{ object.found_location_longitude }},{{ object.lost_location_latitude }}&zoom=true"#}
-{#                      allowfullscreen>#}
-{#                    </iframe>#}
-{#                      <iframe class="w-full h-64 rounded-t-md" id="gmap_canvas" src="https://api.mapbox.com/styles/v1/divad43/clgyd49sh00fc01pr5ekufu09.html?title=false&access_token=pk.eyJ1IjoiZGl2YWQ0MyIsImEiOiJjbGdoNm5wNDkwNG9oM3FzdnBoaGlianlwIn0.bqDGiG2wu8cRCNjYAOPS2Q&zoomwheel=false#12/25.12/55.13" title="Satellite Streets" style="border:none;"></iframe>#}
-{#                          <iframe#}
-{#                          class="w-full h-64 rounded-t-md" id="map"#}
-{#                          frameborder="0" style="border:0"#}
-{#                          src="https://www.google.com/maps/embed/v1/place?key={{ google_maps_api_key }}&q={{ object.found_location_longitude }},{{ object.found_location_latitude }}&zoom=15&markers={{ object.found_location_longitude }},{{ object.found_location_latitude }}"#}
-{#                          allowfullscreen>#}
-{#                        </iframe>#}
-                      <div id="map" class="w-full h-64 rounded-t-md" style="height: 250px; width: 100%"></div>
-{#                      <iframe#}
-{#                      class="w-full h-64 rounded-t-md" id="gmap_canvas"#}
-{#                      frameborder="0" style="border:0"#}
-{#                      src="https://www.google.com/maps/embed/v1/view?key={{ google_maps_api_key }}&center={{ object.found_location_latitude }},{{ object.found_location_longitude }}&zoom=15&maptype=roadmap"#}
-{#                      allowfullscreen>#}
-{#                    </iframe>#}
-
-
+                    <iframe class="w-full h-64 rounded-t-md" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                   </div>
                 </div>
                 <div class="p-6 border-b border-gray-200 dark:border-gray-800">
@@ -715,7 +692,7 @@
               <button type="button" class="w-full flex justify-center items-center bg-green-600 rounded-lg text-white p-[0.657rem] mb-7">
                 <svg class="mr-3 w-[31px] h-[31px]" width="31" height="31" viewBox="0 0 31 31" fill="currentColor" xmlns="../www.w3.org/2000/svg.html">
                   <path d="M3.1001 15.5C3.1001 8.65091 8.65104 3.09998 15.5001 3.09998C22.3492 3.09998 27.9001 8.65091 27.9001 15.5C27.9001 22.349 22.3492 27.9 15.5001 27.9C8.65104 27.9 3.1001 22.349 3.1001 15.5ZM21.1092 13.359C21.6371 12.8311 21.6371 11.9689 21.1092 11.4409C20.5812 10.9129 19.719 10.9129 19.191 11.4409L13.9501 16.6818L11.8092 14.5409C11.2812 14.0129 10.419 14.0129 9.89103 14.5409C9.36307 15.0689 9.36307 15.9311 9.89103 16.459L12.991 19.559C13.519 20.087 14.3812 20.087 14.9092 19.559L21.1092 13.359Z" />
-                </svg> Reclame </button>
+                </svg> Verified Listing </button>
               <!-- Apartment booking section -->
               <div class="rounded-lg shadow-fornt-2 dark:bg-foreground bg-white mb-7">
                 <div class="text-base p-6 border-b border-gray-200 text-gray-700 font-medium dark:border-gray-800 dark:text-gray-100"> Booking </div>
@@ -875,25 +852,4 @@
       {% include 'home/partials/_scrool_btn.html' %}
     
 {% endblock content %}
-
-{% block others_scripts %}
-     <script>
-      function initMap() {
-        var myLatLng = {lat: {{ object.found_location_latitude }}, lng: {{ object.found_location_longitude }}};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: myLatLng
-        });
-
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initMap">
-    </script>
-{% endblock %}
     

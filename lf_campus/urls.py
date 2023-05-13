@@ -7,6 +7,6 @@ urlpatterns = [
     path('', include('core.urls')), 
     path("accounts/", include('accounts.urls')),
     path('admin/', admin.site.urls),
-    path('user/', include('dashboard.urls')),
-    path('messages/', include('user_messages.urls')),
+    # path('messages/', include('user_messages.urls')),
+    # path('dashboard/', include('dashboard.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
